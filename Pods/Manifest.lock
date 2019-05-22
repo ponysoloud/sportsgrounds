@@ -1,0 +1,57 @@
+PODS:
+  - EmptyKit (4.2.0)
+  - GoogleMaps (3.1.0):
+    - GoogleMaps/Maps (= 3.1.0)
+  - GoogleMaps/Base (3.1.0)
+  - GoogleMaps/Maps (3.1.0):
+    - GoogleMaps/Base
+  - "Keyboard+LayoutGuide (1.4.1)"
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.4):
+    - PromiseKit/CorePromise
+  - rubber-range-picker (0.8.1)
+  - Socket.IO-Client-Swift (15.0.0):
+    - Starscream (~> 3.1)
+  - SPAlert (1.0.2)
+  - Starscream (3.1.0)
+
+DEPENDENCIES:
+  - EmptyKit
+  - GoogleMaps
+  - "Keyboard+LayoutGuide"
+  - PromiseKit (~> 6.8)
+  - rubber-range-picker
+  - Socket.IO-Client-Swift (~> 15.0.0)
+  - SPAlert
+  - Starscream (~> 3.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EmptyKit
+    - GoogleMaps
+    - "Keyboard+LayoutGuide"
+    - PromiseKit
+    - rubber-range-picker
+    - Socket.IO-Client-Swift
+    - SPAlert
+    - Starscream
+
+SPEC CHECKSUMS:
+  EmptyKit: 95d75cad79476379124e929488116e409043c1d5
+  GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
+  "Keyboard+LayoutGuide": 7e6f50a8a69ac1e2ef4ce1f4a09cc706bd42e61e
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  rubber-range-picker: e9a1c4eebb783a016f62f46f056aac1cf53ae38c
+  Socket.IO-Client-Swift: c039a808195d22a7192962841b8c035cb61ea49e
+  SPAlert: 1fdeeabd7b4ae8a2bfda23544da86593d8aa6e72
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+
+PODFILE CHECKSUM: 03d585a21bacb5fe7b8df6136ff4483935605ab7
+
+COCOAPODS: 1.5.3
