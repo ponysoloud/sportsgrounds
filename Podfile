@@ -14,6 +14,7 @@ target 'sportsgrounds' do
   pod 'SPAlert'
   pod 'EmptyKit'
   pod 'rubber-range-picker'
+  pod 'GoogleStaticMapsKit'
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|

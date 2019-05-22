@@ -149,7 +149,7 @@
 		930FB5D12293782D0013A8DA /* SGEventChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FB5D02293782D0013A8DA /* SGEventChatViewController.swift */; };
 		930FB5D5229404AB0013A8DA /* SGMessagesPaginationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FB5D4229404AB0013A8DA /* SGMessagesPaginationResponse.swift */; };
 		93FC0CB42294889800DC8348 /* SGTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CB32294889800DC8348 /* SGTextView.swift */; };
-		93FC0CB622948ECC00DC8348 /* SGEventChatSocketsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CB522948ECC00DC8348 /* SGEventChatSocketsHandler.swift */; };
+		93FC0CB622948ECC00DC8348 /* SGEventChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CB522948ECC00DC8348 /* SGEventChatManager.swift */; };
 		93FC0CC22294B26600DC8348 /* SGSocketsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CC12294B26600DC8348 /* SGSocketsProvider.swift */; };
 		93FC0CC42294B37B00DC8348 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CC32294B37B00DC8348 /* Socket.swift */; };
 		93FC0CC62294B3AF00DC8348 /* SocketsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CC52294B3AF00DC8348 /* SocketsProvider.swift */; };
@@ -161,6 +161,8 @@
 		93FC0CDF2294C6A900DC8348 /* SGSocketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CDE2294C6A900DC8348 /* SGSocketEvent.swift */; };
 		93FC0CE12294C6B000DC8348 /* SGSocketForeignEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CE02294C6B000DC8348 /* SGSocketForeignEvent.swift */; };
 		93FC0CE42294CE6300DC8348 /* Parsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CE32294CE6300DC8348 /* Parsable.swift */; };
+		93FC0D002295ED8800DC8348 /* MapSnapshotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CFF2295ED8800DC8348 /* MapSnapshotProvider.swift */; };
+		93FC0D022295F34500DC8348 /* SGMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0D012295F34500DC8348 /* SGMapCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -310,7 +312,7 @@
 		930FB5D02293782D0013A8DA /* SGEventChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGEventChatViewController.swift; sourceTree = "<group>"; };
 		930FB5D4229404AB0013A8DA /* SGMessagesPaginationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGMessagesPaginationResponse.swift; sourceTree = "<group>"; };
 		93FC0CB32294889800DC8348 /* SGTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTextView.swift; sourceTree = "<group>"; };
-		93FC0CB522948ECC00DC8348 /* SGEventChatSocketsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGEventChatSocketsHandler.swift; sourceTree = "<group>"; };
+		93FC0CB522948ECC00DC8348 /* SGEventChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGEventChatManager.swift; sourceTree = "<group>"; };
 		93FC0CC12294B26600DC8348 /* SGSocketsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGSocketsProvider.swift; sourceTree = "<group>"; };
 		93FC0CC32294B37B00DC8348 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		93FC0CC52294B3AF00DC8348 /* SocketsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketsProvider.swift; sourceTree = "<group>"; };
@@ -322,6 +324,8 @@
 		93FC0CDE2294C6A900DC8348 /* SGSocketEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGSocketEvent.swift; sourceTree = "<group>"; };
 		93FC0CE02294C6B000DC8348 /* SGSocketForeignEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGSocketForeignEvent.swift; sourceTree = "<group>"; };
 		93FC0CE32294CE6300DC8348 /* Parsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsable.swift; sourceTree = "<group>"; };
+		93FC0CFF2295ED8800DC8348 /* MapSnapshotProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSnapshotProvider.swift; sourceTree = "<group>"; };
+		93FC0D012295F34500DC8348 /* SGMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGMapCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +450,7 @@
 				930594E6228C6E7F00CB39E1 /* Extensions */,
 				9305956C228C84BC00CB39E1 /* LocalFiles.swift */,
 				930594E5228C6E7F00CB39E1 /* NetworkingDelay.swift */,
+				93FC0CFF2295ED8800DC8348 /* MapSnapshotProvider.swift */,
 				930FB549228E226F0013A8DA /* Paginator.swift */,
 				93FC0CE32294CE6300DC8348 /* Parsable.swift */,
 				93059504228C6E7F00CB39E1 /* Pickers */,
@@ -643,6 +648,7 @@
 			children = (
 				930FB551228E3C570013A8DA /* SGBorderedButtonCell.swift */,
 				930FB557228EE3600013A8DA /* SGButtonCell.swift */,
+				93FC0D012295F34500DC8348 /* SGMapCell.swift */,
 				930FB508228DAA630013A8DA /* SGEventCell.swift */,
 				930FB5892291B26C0013A8DA /* SGEventDescriptionCell.swift */,
 				930FB5C6229366DD0013A8DA /* SGTextCell.swift */,
@@ -815,7 +821,7 @@
 			isa = PBXGroup;
 			children = (
 				930FB5D02293782D0013A8DA /* SGEventChatViewController.swift */,
-				93FC0CB522948ECC00DC8348 /* SGEventChatSocketsHandler.swift */,
+				93FC0CB522948ECC00DC8348 /* SGEventChatManager.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -909,6 +915,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-sportsgrounds/Pods-sportsgrounds-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EmptyKit/EmptyKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleStaticMapsKit/GoogleStaticMapsKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SPAlert/SPAlert.framework",
@@ -921,6 +928,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleStaticMapsKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPAlert.framework",
@@ -1051,9 +1059,10 @@
 				930FB5902291B3E50013A8DA /* SGUserCell.swift in Sources */,
 				93FC0CDC2294C61500DC8348 /* SocketForeignEvent.swift in Sources */,
 				930FB579228F5F450013A8DA /* RangePickerViewController.swift in Sources */,
+				93FC0D002295ED8800DC8348 /* MapSnapshotProvider.swift in Sources */,
 				93059591228CCE2C00CB39E1 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				93059571228CA58A00CB39E1 /* GroundAPI.swift in Sources */,
-				93FC0CB622948ECC00DC8348 /* SGEventChatSocketsHandler.swift in Sources */,
+				93FC0CB622948ECC00DC8348 /* SGEventChatManager.swift in Sources */,
 				9305953F228C6E7F00CB39E1 /* UIColor+Extensions.swift in Sources */,
 				930FB5A32291E9B50013A8DA /* UserRequest.swift in Sources */,
 				930FB509228DAA630013A8DA /* SGEventCell.swift in Sources */,
@@ -1083,6 +1092,7 @@
 				930FB556228EDF190013A8DA /* SGBallLayer.swift in Sources */,
 				93FC0CE42294CE6300DC8348 /* Parsable.swift in Sources */,
 				930FB5D12293782D0013A8DA /* SGEventChatViewController.swift in Sources */,
+				93FC0D022295F34500DC8348 /* SGMapCell.swift in Sources */,
 				930FB581229073AC0013A8DA /* SGStepViewController.swift in Sources */,
 				930FB51C228DC2830013A8DA /* SGEventsPaginationResponse.swift in Sources */,
 				930FB5922291B4A60013A8DA /* SGSeparatorCell.swift in Sources */,

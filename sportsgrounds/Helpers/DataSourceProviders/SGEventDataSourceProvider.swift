@@ -44,7 +44,7 @@ class SGEventDataSourceProvider {
         
         // Ground Section
         let groundHeader = SGDataSourceProviderHeaderItem.title("Площадка")
-        let groundItems: [SGDataSourceProviderRowItem] = [.ground(event.ground)]
+        let groundItems: [SGDataSourceProviderRowItem] = [.ground(event.ground), .map(event.ground)]
         
         let groundSection = SGDataSourceProviderSection(headerItem: groundHeader,
                                                         rowItems: groundItems)
@@ -94,7 +94,7 @@ class SGEventDataSourceProvider {
                 }
             }
             
-            if !userParticipated {
+            if !userParticipated, event.status == .scheduled {
                 participantsItems.append(.button("Вступить", teamId: team.id))
             }
         }

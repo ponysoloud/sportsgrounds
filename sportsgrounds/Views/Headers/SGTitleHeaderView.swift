@@ -12,11 +12,11 @@ class SGTitleHeaderView: UIView {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 20, left: 30, bottom: 10, right: 30)
+    private static let contentInsets = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.font = .title2Font
+        label.font = .title3Font
         label.textColor = .appBlack
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -45,7 +45,7 @@ class SGTitleHeaderView: UIView {
     
     static func height(forText text: String, width: CGFloat) -> CGFloat {
         return text.height(withConstrainedWidth: width - contentInsets.left - contentInsets.right,
-                           font: .title2Font) + contentInsets.top + contentInsets.bottom
+                           font: .title3Font) + contentInsets.top + contentInsets.bottom
     }
     
     func configure(withText text: String) {

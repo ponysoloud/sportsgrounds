@@ -51,7 +51,7 @@ class SGEventChatViewController: SGViewController {
     
     private lazy var messageTextView: SGTextView = {
         let textView = SGTextView.textView
-        textView.delegate = self
+        textView.placeholder = "Сообщение"
         
         bottomView.addSubview(textView)
         return textView
@@ -66,7 +66,7 @@ class SGEventChatViewController: SGViewController {
         return button
     }()
     
-    private var socketsHandler: SGEventChatSocketsHandler?
+    private var chatManager: SGEventChatManager?
     
     private var messages: [SGMessage] = []
     private var hasNext: Bool = false
@@ -82,12 +82,6 @@ class SGEventChatViewController: SGViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        if let eventId = self.eventId {
-            self.socketsHandler?.leave(withToken: self.user.token, fromEventRoom: eventId)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,7 +93,7 @@ class SGEventChatViewController: SGViewController {
         self.addGestureRecognizerForHidingKeyboardOnTap()
         
         if let socketsProvider = self.socketsProvider {
-            self.socketsHandler = SGEventChatSocketsHandler(
+            self.chatManager = SGEventChatManager(
                 provider: socketsProvider,
                 joinedHandler: { (user) in
                     print(user)
@@ -125,6 +119,14 @@ class SGEventChatViewController: SGViewController {
         
         self.reload()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if let eventId = self.eventId {
+            self.chatManager?.leave(withToken: self.user.token, fromEventRoom: eventId, withCompletion: {})
+        }
     }
     
     override var preferredNavigationBarItemsConfigurationType: UINavigationController.ItemsConfigurationType {
@@ -157,8 +159,7 @@ class SGEventChatViewController: SGViewController {
             }
             
             self.tableView.reloadData()
-            self.socketsHandler?.join(withToken: self.user.token, toEventRoom: eventId)
-            //self.responsivityProvider?.join(withToken: self.user.token, toEventRoom: eventId)
+            self.chatManager?.join(withToken: self.user.token, toEventRoom: eventId, withCompletion: {})
         }.catch {
             [unowned self]
             error in
@@ -262,16 +263,10 @@ class SGEventChatViewController: SGViewController {
     // MARK: - Button Events
     
     @objc private func sendMessageButtonTouchUpInside(_ sender: UIButton) {
-        if let eventId = self.eventId {
-            self.socketsHandler?.sendMessage(withToken: user.token, toEventRoom: eventId, message: messageTextView.text)
+        if let eventId = self.eventId, let message = self.messageTextView.regularText {
+            self.messageTextView.text = ""
+            self.chatManager?.sendMessage(withToken: user.token, toEventRoom: eventId, message: message, withCompletion: {})
         }
-    }
-}
-
-extension SGEventChatViewController: UITextViewDelegate {
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        textView.text = nil
     }
 }
 

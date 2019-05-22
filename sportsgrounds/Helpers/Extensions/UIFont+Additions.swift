@@ -18,8 +18,12 @@ extension UIFont {
         return UIFont.systemFont(ofSize: 20, weight: .bold)
     }
     
+    class var title3Font: UIFont {
+        return UIFont.systemFont(ofSize: 20, weight: .semibold)
+    }
+    
     class var subtitle1Font: UIFont {
-        return UIFont.systemFont(ofSize: 16, weight: .semibold)
+        return UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     
     class var subtitle2Font: UIFont {

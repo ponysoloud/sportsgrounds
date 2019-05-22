@@ -16,7 +16,7 @@ class SGBorderedButtonCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 20, left: 80, bottom: 20, right: 80)
+    private static let contentInsets = UIEdgeInsets(top: 20, left: 60, bottom: 20, right: 60)
     
     private lazy var button: SGButton = {
         let button = SGButton(type: .custom)

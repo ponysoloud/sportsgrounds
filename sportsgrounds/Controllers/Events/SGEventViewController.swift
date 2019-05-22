@@ -19,6 +19,7 @@ class SGEventViewController: SGViewController {
     var onChat: ((Int) -> Void)?
     var onParticipant: ((SGUser) -> Void)?
     var onGround: ((Int) -> Void)?
+    var onMap: ((SGCoordinate) -> Void)?
     
     // MARK: - Private properties
     
@@ -26,6 +27,7 @@ class SGEventViewController: SGViewController {
         let tableView = SGSelfSizingTableView()
         
         tableView.register(SGGroundCell.self, forCellReuseIdentifier: SGGroundCell.reuseIdentifier)
+        tableView.register(SGMapCell.self, forCellReuseIdentifier: SGMapCell.reuseIdentifier)
         tableView.register(SGEventCell.self, forCellReuseIdentifier: SGEventCell.reuseIdentifier)
         tableView.register(SGEventDescriptionCell.self, forCellReuseIdentifier: SGEventDescriptionCell.reuseIdentifier)
         tableView.register(SGEventDetailsCell.self, forCellReuseIdentifier: SGEventDetailsCell.reuseIdentifier)
@@ -260,6 +262,23 @@ extension SGEventViewController: UITableViewDataSource {
         }
         
         switch item {
+        case let .map(ground):
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SGMapCell.reuseIdentifier,
+                                                        for: indexPath) as? SGMapCell {
+                
+                let size = SGMapCell.mapSize(forWidth: self.view.width)
+                let url = MapSnapshotProvider.snapshotUrl(withSize: size,
+                                                          markerLocation: (latitude: ground.location.latitude,
+                                                                           longitude: ground.location.longitude))
+                
+                if let url = url {
+                    cell.configure(withSnapshotUrl: url, style: .grouped) {
+                        [unowned self] _ in
+                        self.onMap?(ground.location)
+                    }
+                    return cell
+                }
+            }
         case let .ground(ground):
             if let cell = tableView.dequeueReusableCell(withIdentifier: SGGroundCell.reuseIdentifier,
                                                         for: indexPath) as? SGGroundCell {
@@ -333,6 +352,8 @@ extension SGEventViewController: UITableViewDelegate {
         switch item {
         case let .ground(ground):
             return SGGroundCell.height(forGround: ground, width: self.view.width)
+        case .map:
+            return SGMapCell.height
         case let .description(text):
             return SGEventDescriptionCell.height(forText: text, width: self.view.width)
         case .eventDetails:

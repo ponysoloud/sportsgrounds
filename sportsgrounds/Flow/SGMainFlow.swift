@@ -163,8 +163,22 @@ final class SGMainFlow: SGScreenFlow {
             vc.navigationController?.pushViewController(target, animated: true)
         }
         
+        let onMap: (SGCoordinate) -> Void = {
+            [unowned self, unowned vc] coordinates in
+            
+            let tabBarController = self.navigationController.viewControllers.first as? UITabBarController
+            tabBarController?.selectedIndex = 0
+            vc.dismiss(animated: true, completion: {
+                if let groundsNavigationController = tabBarController?.viewControllers?.first as? UINavigationController,
+                    let groundsViewController = groundsNavigationController.viewControllers.first as? SGGroundsViewController {
+                    groundsViewController.showGrounds(inLocation: coordinates)
+                }
+            })
+        }
+        
         vc.onChat = onChat
         vc.onGround = onGround
+        vc.onMap = onMap
         vc.eventAPI = EventAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
         vc.flow = self
         return vc

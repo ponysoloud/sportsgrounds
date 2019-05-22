@@ -18,7 +18,7 @@ class SGEventCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+    private static let contentInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     
     private lazy var shadowView: UIView = {
         let view = UIView()
@@ -41,8 +41,9 @@ class SGEventCell: UITableViewCell {
         view.maskToBounds = true
         view.layer.cornerRadius = 12.0
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(cardTouchUpInside(_:)))
-        view.addGestureRecognizer(tapGestureRecognizer)
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cardTouchUpInside(_:)))
+        longPressGestureRecognizer.minimumPressDuration = 0.0
+        view.addGestureRecognizer(longPressGestureRecognizer)
         
         shadowView.addSubview(view)
         return view
@@ -248,6 +249,17 @@ class SGEventCell: UITableViewCell {
     }
     
     @objc private func cardTouchUpInside(_ sender: UITapGestureRecognizer) {
-        self.tapHandler?(self)
+        self.cardView.isUserInteractionEnabled = false
+        
+        self.cardView.simulateScalingOnTap(usingGestureRecognizer: sender,
+                                           withEvent: {
+                                            [unowned self] in
+                                            self.tapHandler?(self)
+                                            self.cardView.isUserInteractionEnabled = true
+        },
+                                           completion: {
+                                            [unowned self] in
+                                            self.cardView.isUserInteractionEnabled = true
+        })
     }
 }

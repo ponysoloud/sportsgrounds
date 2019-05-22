@@ -18,7 +18,7 @@ class SGGroundCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 30)
+    private static let contentInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -95,6 +95,11 @@ class SGGroundCell: UITableViewCell {
     
     static func height(forGround ground: SGGround, width: CGFloat) -> CGFloat {
         let contentWidth = width - self.contentInsets.left - self.contentInsets.right
+        
+        let activitiesStackViewHeight: CGFloat = ground.activities.count > 0 ? 20.0 : 0
+        
+        let environmentsStackViewHeight: CGFloat = ground.environments.count > 0 ? 20.0 : 0
+        
         return self.contentInsets.top
             + ground.address.capitalizingFirst.height(withConstrainedWidth: contentWidth,
                                                       font: .subtitle1Font)
@@ -102,9 +107,9 @@ class SGGroundCell: UITableViewCell {
             + ground.district.capitalizingFirst.height(withConstrainedWidth: contentWidth,
                                                       font: .mediumTextFont)
             + 15
-            + 20
+            + activitiesStackViewHeight
             + 8
-            + 20
+            + environmentsStackViewHeight
             + self.contentInsets.bottom
     }
     
@@ -160,12 +165,10 @@ class SGGroundCell: UITableViewCell {
             
             activitiesStackView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 15),
             activitiesStackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: contentInsets.left),
-            activitiesStackView.heightAnchor.constraint(equalToConstant: 20.0),
             activitiesStackView.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -contentInsets.right),
             
             environmentsStackView.topAnchor.constraint(equalTo: activitiesStackView.bottomAnchor, constant: 8),
             environmentsStackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: contentInsets.left),
-            environmentsStackView.heightAnchor.constraint(equalToConstant: 20.0),
             environmentsStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -contentInsets.bottom),
             environmentsStackView.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -contentInsets.right)
         ])

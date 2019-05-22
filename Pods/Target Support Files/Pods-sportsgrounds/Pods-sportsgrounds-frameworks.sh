@@ -144,6 +144,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/EmptyKit/EmptyKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleStaticMapsKit/GoogleStaticMapsKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SPAlert/SPAlert.framework"
@@ -153,6 +154,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/EmptyKit/EmptyKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleStaticMapsKit/GoogleStaticMapsKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SPAlert/SPAlert.framework"

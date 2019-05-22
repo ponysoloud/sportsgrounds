@@ -1,5 +1,5 @@
 //
-//  SGEventChatSocketsHandler.swift
+//  SGEventChatManager.swift
 //  sportsgrounds
 //
 //  Created by Alexander Ponomarev on 21/05/2019.
@@ -9,7 +9,7 @@
 import Foundation
 import SocketIO
 
-class SGEventChatSocketsHandler {
+class SGEventChatManager {
     
     typealias JoinedEventHandler = (SGUser) -> Void
     typealias LeavedEventHandler = (SGUser) -> Void
@@ -40,19 +40,22 @@ class SGEventChatSocketsHandler {
     
     // MARK: - Public functions
     
-    func join(withToken token: String, toEventRoom eventId: Int) {
+    func join(withToken token: String, toEventRoom eventId: Int, withCompletion completion: @escaping () -> Void) {
         self.provider.send(event: SGSocketEvent.join(token: token, eventId: eventId),
-                           withSocket: SGSocket.eventMessages)
+                           withSocket: SGSocket.eventMessages,
+                           withCompletion: completion)
     }
     
-    func leave(withToken token: String, fromEventRoom eventId: Int) {
+    func leave(withToken token: String, fromEventRoom eventId: Int, withCompletion completion: @escaping () -> Void) {
         self.provider.send(event: SGSocketEvent.leave(token: token, eventId: eventId),
-                           withSocket: SGSocket.eventMessages)
+                           withSocket: SGSocket.eventMessages,
+                           withCompletion: completion)
     }
     
-    func sendMessage(withToken token: String, toEventRoom eventId: Int, message: String) {
+    func sendMessage(withToken token: String, toEventRoom eventId: Int, message: String, withCompletion completion: @escaping () -> Void) {
         self.provider.send(event: SGSocketEvent.message(token: token, eventId: eventId, text: message),
-                           withSocket: SGSocket.eventMessages)
+                           withSocket: SGSocket.eventMessages,
+                           withCompletion: completion)
     }
     
     // MARK: - Private functions

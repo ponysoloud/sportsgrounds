@@ -12,11 +12,17 @@ protocol SocketsProvider {
     
     init(environment: SocketsEnvironment)
     
-    func connect(toSocket socket: Socket, withHandler handler: @escaping (Socket) -> Void)
+    func connect(toSocket socket: Socket,
+                 withHandler handler: @escaping (Socket) -> Void)
     
-    func disconnect(fromSocket socket: Socket, withHandler handler: @escaping (Socket) -> Void)
+    func disconnect(fromSocket socket: Socket,
+                    withHandler handler: @escaping (Socket) -> Void)
     
-    func listen(socket: Socket, forEvent event: SocketForeignEvent, withHandler handler: @escaping ([String: Any]) -> Void)
+    func listen(socket: Socket,
+                forEvent event: SocketForeignEvent,
+                withHandler handler: @escaping ([String: Any]) -> Void)
     
-    func send(event: SocketEvent, withSocket socket: Socket)
+    func send(event: SocketEvent,
+              withSocket socket: Socket,
+              withCompletion handler: @escaping () -> Void)
 }

@@ -18,7 +18,7 @@ class SGEventDescriptionCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 16, left: 30, bottom: 8, right: 30)
+    private static let contentInsets = UIEdgeInsets(top: 16, left: 20, bottom: 6, right: 20)
     
     private lazy var label: UILabel = {
         let label = UILabel()

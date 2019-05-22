@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "57805357F2DD088972870ED9D7CCA415"
+               BlueprintIdentifier = "BE7943E8F01F536F242118B1A02E1536"
                BlueprintName = "SPAlert"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SPAlert.framework">

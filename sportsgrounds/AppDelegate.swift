@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import PromiseKit
+import GoogleStaticMapsKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Configure Google Maps SDK
         GMSServices.provideAPIKey("AIzaSyCSqp033XAqi79xvH2OAezLzgZr2WeGfCs")
+        GoogleStaticMaps.setAPIKey(apiKey: "AIzaSyBDjmI8Gr6GKaNdgnGc3KoLpvEDG6qQuNw")
         
         // Setup beginning application state
         let localDataManager = SGLocalDataManager(keychainConfiguration: SGSportsgroundsKeychainConfiguration())

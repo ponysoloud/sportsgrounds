@@ -27,7 +27,7 @@ extension UINavigationController {
         navigationController.navigationBar.backgroundColor = UIColor.appWhite
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
-        navigationController.navigationBar.titleTextAttributes = [.font: UIFont.title2Font,
+        navigationController.navigationBar.titleTextAttributes = [.font: UIFont.title3Font,
                                                                   .foregroundColor: UIColor.appBlack]
         
         return navigationController

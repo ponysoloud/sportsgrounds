@@ -18,7 +18,7 @@ class SGTextCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 10, left: 30, bottom: 5, right: 30)
+    private static let contentInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     
     private lazy var label: UILabel = {
         let label = UILabel()

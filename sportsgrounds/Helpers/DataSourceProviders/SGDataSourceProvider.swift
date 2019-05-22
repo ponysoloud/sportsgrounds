@@ -16,6 +16,7 @@ enum SGDataSourceProviderRowItem {
     case text(String)
     case user(SGUser, isOwner: Bool, isYou: Bool)
     case button(String, teamId: Int)
+    case map(SGGround)
     case separator
 }
 

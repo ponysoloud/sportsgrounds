@@ -18,7 +18,7 @@ class SGOutcomeMessageCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 5, left: 60, bottom: 5, right: 30)
+    private static let contentInsets = UIEdgeInsets(top: 5, left: 60, bottom: 5, right: 20)
     
     private lazy var cloudView: UIView = {
         let view = UIView()

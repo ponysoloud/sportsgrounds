@@ -18,7 +18,7 @@ class SGSeparatorCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+    private static let contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     
     private lazy var separatorView: SGSeparatorView = {
         let view = SGSeparatorView.view

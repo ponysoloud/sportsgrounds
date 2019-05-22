@@ -10,6 +10,31 @@ import UIKit
 
 extension UIView {
     
+    func simulateScalingOnTap(usingGestureRecognizer gestureRecognizer: UIGestureRecognizer,
+                              withEvent event: @escaping () -> Void,
+                              completion: @escaping () -> Void) {
+        
+        switch gestureRecognizer.state {
+        case .began:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.transform = .init(scaleX: 0.95, y: 0.95)
+            }, completion: {  _ in
+                event()
+            })
+        case .ended, .cancelled, .failed:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.transform = .identity
+            }, completion: {  _ in
+                completion()
+            })
+        default:
+            return
+        }
+    }
+}
+
+extension UIView {
+    
     enum GradientDirection {
         case vertical
         case horizontal

@@ -100,6 +100,14 @@ class SGGroundsViewController: SGFlowViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    // MARK: - Public functions
+    
+    func showGrounds(inLocation location: SGCoordinate) {
+        let target = CLLocationCoordinate2D(withCoordinate: location)
+        let camera = GMSCameraPosition.camera(withTarget: target, zoom: SGGroundsViewController.minZoomLevelForReceivingGrounds)
+        mapView.animate(to: camera)
+    }
+    
     // MARK: - Private functions
     
     private func addConstraintsToSubviews() {

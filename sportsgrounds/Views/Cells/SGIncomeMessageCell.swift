@@ -18,7 +18,7 @@ class SGIncomeMessageCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private static let contentInsets = UIEdgeInsets(top: 5, left: 30, bottom: 5, right: 60)
+    private static let contentInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 60)
     
     private lazy var cloudView: UIView = {
         let view = UIView()

@@ -47,8 +47,8 @@ class SGSocketsProvider: SocketsProvider {
         }
     }
     
-    func send(event: SocketEvent, withSocket socket: Socket) {
-        self.client(forSocket: socket).emit(event.name, event.dictionary)
+    func send(event: SocketEvent, withSocket socket: Socket, withCompletion handler: @escaping () -> Void) {
+        self.client(forSocket: socket).emit(event.name, event.dictionary, completion: handler)
     }
     
     private func client(forSocket socket: Socket) -> SocketIOClient {

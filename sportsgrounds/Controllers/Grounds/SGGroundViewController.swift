@@ -20,6 +20,7 @@ class SGGroundViewController: SGViewController {
     
     var onEvent: ((Int) -> Void)?
     var onAddEvent: ((SGGround) -> Void)?
+    var onMap: ((SGCoordinate) -> Void)?
     
     // MARK: - Private properties
     
@@ -27,6 +28,7 @@ class SGGroundViewController: SGViewController {
         let tableView = SGSelfSizingTableView()
         
         tableView.register(SGGroundCell.self, forCellReuseIdentifier: SGGroundCell.reuseIdentifier)
+        tableView.register(SGMapCell.self, forCellReuseIdentifier: SGMapCell.reuseIdentifier)
         tableView.register(SGEventCell.self, forCellReuseIdentifier: SGEventCell.reuseIdentifier)
         tableView.register(SGBorderedButtonCell.self, forCellReuseIdentifier: SGBorderedButtonCell.reuseIdentifier)
  
@@ -210,7 +212,7 @@ extension SGGroundViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return 2
         }
         
         if self.paginator.results.count > 0 {
@@ -221,12 +223,32 @@ extension SGGroundViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            if let ground = self.ground, let cell = tableView.dequeueReusableCell(withIdentifier: SGGroundCell.reuseIdentifier,
-                                                                                  for: indexPath) as? SGGroundCell {
-                cell.configure(withGround: ground, style: .separate, tapHandler: { _ in })
-                return cell
+        if indexPath.section == 0, let ground = self.ground {
+            if indexPath.row == 0 {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: SGGroundCell.reuseIdentifier,
+                                                            for: indexPath) as? SGGroundCell {
+                    cell.configure(withGround: ground, style: .separate, tapHandler: { _ in })
+                    return cell
+                }
+            } else if indexPath.row == 1 {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: SGMapCell.reuseIdentifier,
+                                                            for: indexPath) as? SGMapCell {
+                    
+                    let size = SGMapCell.mapSize(forWidth: self.view.width)
+                    let url = MapSnapshotProvider.snapshotUrl(withSize: size,
+                                                              markerLocation: (latitude: ground.location.latitude,
+                                                                               longitude: ground.location.longitude))
+                    
+                    if let url = url {
+                        cell.configure(withSnapshotUrl: url, style: .separate) {
+                            [unowned self] _ in
+                            self.onMap?(ground.location)
+                        }
+                        return cell
+                    }
+                }
             }
+            
             
             return UITableViewCell()
         }
@@ -264,11 +286,12 @@ extension SGGroundViewController: UITableViewDataSource {
 extension SGGroundViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            if let ground = self.ground {
+        if indexPath.section == 0, let ground = self.ground {
+            if indexPath.row == 0 {
                 return SGGroundCell.height(forGround: ground, width: self.view.width)
+            } else if indexPath.row == 1 {
+                return SGMapCell.height
             }
-            return 0.01
         }
         
         if self.paginator.results.count > 0 {
