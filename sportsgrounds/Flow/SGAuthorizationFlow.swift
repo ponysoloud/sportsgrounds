@@ -19,7 +19,7 @@ final class SGAuthorizationFlow: SGScreenFlow {
     }
     
     func begin() {
-        self.navigationController.pushViewController(onboardingScreen, animated: true)
+        self.navigationController.pushFromRoot(viewController: onboardingScreen, animated: true)
     }
     
     private var onboardingScreen: SGOnboardingViewController {

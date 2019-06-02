@@ -206,7 +206,7 @@ class SGAuthorizationViewController: SGViewController {
             [weak self]
             token, user in
             
-            let user = SGApplicationUser.save(withToken: token, user: user)
+            let user = SGApplicationUser(token: token, user: user)
             performWithDelay {
                 self?.onEnter?(user)
             }

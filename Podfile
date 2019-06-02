@@ -12,9 +12,9 @@ target 'sportsgrounds' do
   pod 'Keyboard+LayoutGuide'
   pod 'GoogleMaps'
   pod 'SPAlert'
-  pod 'EmptyKit'
   pod 'rubber-range-picker'
   pod 'GoogleStaticMapsKit'
+  pod 'YPImagePicker'
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|

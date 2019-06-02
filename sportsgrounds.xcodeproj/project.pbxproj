@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1713D7126684B3BD95253214 /* Pods_sportsgrounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE2AFDD16C2EF42230DD434 /* Pods_sportsgrounds.framework */; };
+		930501FB22A2BE5A0095BFF5 /* SGSmallProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930501FA22A2BE5A0095BFF5 /* SGSmallProfileCell.swift */; };
+		930501FF22A2D2A70095BFF5 /* SGForeignProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930501FE22A2D2A70095BFF5 /* SGForeignProfileViewController.swift */; };
+		9305020322A3F1710095BFF5 /* SGPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305020222A3F1710095BFF5 /* SGPlaceholderCell.swift */; };
 		930594BC228C6D9F00CB39E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594BB228C6D9F00CB39E1 /* AppDelegate.swift */; };
 		930594C1228C6D9F00CB39E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930594BF228C6D9F00CB39E1 /* Main.storyboard */; };
 		930594C3228C6DA000CB39E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930594C2228C6DA000CB39E1 /* Assets.xcassets */; };
@@ -53,7 +56,6 @@
 		93059550228C6E7F00CB39E1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059502228C6E7F00CB39E1 /* Date+Extensions.swift */; };
 		93059551228C6E7F00CB39E1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059503228C6E7F00CB39E1 /* UITextField+Extensions.swift */; };
 		93059552228C6E7F00CB39E1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059505228C6E7F00CB39E1 /* DatePickerViewController.swift */; };
-		93059553228C6E7F00CB39E1 /* PickersAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059506228C6E7F00CB39E1 /* PickersAssets.swift */; };
 		93059554228C6E7F00CB39E1 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059508228C6E7F00CB39E1 /* Dispatcher.swift */; };
 		93059555228C6E7F00CB39E1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059509228C6E7F00CB39E1 /* Environment.swift */; };
 		93059556228C6E7F00CB39E1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305950A228C6E7F00CB39E1 /* Provider.swift */; };
@@ -62,7 +64,7 @@
 		93059559228C6E7F00CB39E1 /* URLComponents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305950E228C6E7F00CB39E1 /* URLComponents+Extensions.swift */; };
 		9305955A228C6E7F00CB39E1 /* HTTPDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305950F228C6E7F00CB39E1 /* HTTPDispatcher.swift */; };
 		9305955B228C6E7F00CB39E1 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059510228C6E7F00CB39E1 /* Request.swift */; };
-		9305955C228C6E7F00CB39E1 /* SportgroundsResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059512228C6E7F00CB39E1 /* SportgroundsResponseError.swift */; };
+		9305955C228C6E7F00CB39E1 /* SportsgroundsResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059512228C6E7F00CB39E1 /* SportsgroundsResponseError.swift */; };
 		9305955D228C6E7F00CB39E1 /* SportsgroundsEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059513228C6E7F00CB39E1 /* SportsgroundsEnvironment.swift */; };
 		9305955E228C6E7F00CB39E1 /* EventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059515228C6E7F00CB39E1 /* EventAPI.swift */; };
 		9305955F228C6E7F00CB39E1 /* EventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059516228C6E7F00CB39E1 /* EventRequest.swift */; };
@@ -148,6 +150,11 @@
 		930FB5CF229370E10013A8DA /* SGMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FB5CE229370E10013A8DA /* SGMessageResponse.swift */; };
 		930FB5D12293782D0013A8DA /* SGEventChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FB5D02293782D0013A8DA /* SGEventChatViewController.swift */; };
 		930FB5D5229404AB0013A8DA /* SGMessagesPaginationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FB5D4229404AB0013A8DA /* SGMessagesPaginationResponse.swift */; };
+		9381D51A229740AC00BAE285 /* SGUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381D519229740AC00BAE285 /* SGUsersResponse.swift */; };
+		9381D51E22974B8A00BAE285 /* SGBigProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381D51D22974B8A00BAE285 /* SGBigProfileCell.swift */; };
+		9381D52022974D0200BAE285 /* Integer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381D51F22974D0200BAE285 /* Integer+Extensions.swift */; };
+		9381D522229751C600BAE285 /* SGRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381D521229751C600BAE285 /* SGRatingCell.swift */; };
+		93DF259022A4758000B99D15 /* NSMutableData+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DF258F22A4758000B99D15 /* NSMutableData+Extensions.swift */; };
 		93FC0CB42294889800DC8348 /* SGTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CB32294889800DC8348 /* SGTextView.swift */; };
 		93FC0CB622948ECC00DC8348 /* SGEventChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CB522948ECC00DC8348 /* SGEventChatManager.swift */; };
 		93FC0CC22294B26600DC8348 /* SGSocketsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC0CC12294B26600DC8348 /* SGSocketsProvider.swift */; };
@@ -169,6 +176,9 @@
 		3FE2AFDD16C2EF42230DD434 /* Pods_sportsgrounds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportsgrounds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		613D8557887FC26F00906BF5 /* Pods-sportsgrounds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsgrounds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sportsgrounds/Pods-sportsgrounds.debug.xcconfig"; sourceTree = "<group>"; };
 		7713B47E4F9702B1E27310D1 /* Pods-sportsgrounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportsgrounds.release.xcconfig"; path = "Pods/Target Support Files/Pods-sportsgrounds/Pods-sportsgrounds.release.xcconfig"; sourceTree = "<group>"; };
+		930501FA22A2BE5A0095BFF5 /* SGSmallProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGSmallProfileCell.swift; sourceTree = "<group>"; };
+		930501FE22A2D2A70095BFF5 /* SGForeignProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGForeignProfileViewController.swift; sourceTree = "<group>"; };
+		9305020222A3F1710095BFF5 /* SGPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGPlaceholderCell.swift; sourceTree = "<group>"; };
 		930594B8228C6D9F00CB39E1 /* sportsgrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsgrounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		930594BB228C6D9F00CB39E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		930594C0228C6D9F00CB39E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,7 +226,6 @@
 		93059502228C6E7F00CB39E1 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		93059503228C6E7F00CB39E1 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		93059505228C6E7F00CB39E1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		93059506228C6E7F00CB39E1 /* PickersAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickersAssets.swift; sourceTree = "<group>"; };
 		93059508228C6E7F00CB39E1 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		93059509228C6E7F00CB39E1 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		9305950A228C6E7F00CB39E1 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
@@ -225,7 +234,7 @@
 		9305950E228C6E7F00CB39E1 /* URLComponents+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLComponents+Extensions.swift"; sourceTree = "<group>"; };
 		9305950F228C6E7F00CB39E1 /* HTTPDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDispatcher.swift; sourceTree = "<group>"; };
 		93059510228C6E7F00CB39E1 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		93059512228C6E7F00CB39E1 /* SportgroundsResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportgroundsResponseError.swift; sourceTree = "<group>"; };
+		93059512228C6E7F00CB39E1 /* SportsgroundsResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsgroundsResponseError.swift; sourceTree = "<group>"; };
 		93059513228C6E7F00CB39E1 /* SportsgroundsEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsgroundsEnvironment.swift; sourceTree = "<group>"; };
 		93059515228C6E7F00CB39E1 /* EventAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAPI.swift; sourceTree = "<group>"; };
 		93059516228C6E7F00CB39E1 /* EventRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRequest.swift; sourceTree = "<group>"; };
@@ -311,6 +320,11 @@
 		930FB5CE229370E10013A8DA /* SGMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGMessageResponse.swift; sourceTree = "<group>"; };
 		930FB5D02293782D0013A8DA /* SGEventChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGEventChatViewController.swift; sourceTree = "<group>"; };
 		930FB5D4229404AB0013A8DA /* SGMessagesPaginationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGMessagesPaginationResponse.swift; sourceTree = "<group>"; };
+		9381D519229740AC00BAE285 /* SGUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGUsersResponse.swift; sourceTree = "<group>"; };
+		9381D51D22974B8A00BAE285 /* SGBigProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGBigProfileCell.swift; sourceTree = "<group>"; };
+		9381D51F22974D0200BAE285 /* Integer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Integer+Extensions.swift"; sourceTree = "<group>"; };
+		9381D521229751C600BAE285 /* SGRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGRatingCell.swift; sourceTree = "<group>"; };
+		93DF258F22A4758000B99D15 /* NSMutableData+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableData+Extensions.swift"; sourceTree = "<group>"; };
 		93FC0CB32294889800DC8348 /* SGTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTextView.swift; sourceTree = "<group>"; };
 		93FC0CB522948ECC00DC8348 /* SGEventChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGEventChatManager.swift; sourceTree = "<group>"; };
 		93FC0CC12294B26600DC8348 /* SGSocketsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGSocketsProvider.swift; sourceTree = "<group>"; };
@@ -389,14 +403,19 @@
 		930594CD228C6E7E00CB39E1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				930594CE228C6E7E00CB39E1 /* Onboarding */,
 				93059569228C7CB500CB39E1 /* Authorization */,
+				93FC0CE22294CD7700DC8348 /* Chat */,
+				930594CE228C6E7E00CB39E1 /* Onboarding */,
+				930FB564228F45690013A8DA /* SGCreateEventViewController.swift */,
+				930594D5228C6E7E00CB39E1 /* SGEventsViewController.swift */,
+				930FB562228F45590013A8DA /* SGEventViewController.swift */,
+				930594D2228C6E7E00CB39E1 /* SGGroundsViewController.swift */,
+				930FB52B228DE85F0013A8DA /* SGGroundViewController.swift */,
 				930594D4228C6E7E00CB39E1 /* SGLoaderViewController.swift */,
 				930594D6228C6E7E00CB39E1 /* SGProfileViewController.swift */,
-				930FB576228F4F710013A8DA /* SGViewController.swift */,
+				930501FE22A2D2A70095BFF5 /* SGForeignProfileViewController.swift */,
 				930FB580229073AC0013A8DA /* SGStepViewController.swift */,
-				930FB568228F45CA0013A8DA /* Events */,
-				930FB53C228E09EB0013A8DA /* Grounds */,
+				930FB576228F4F710013A8DA /* SGViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -485,6 +504,7 @@
 				930594FF228C6E7F00CB39E1 /* UIScrollView+Extensions.swift */,
 				930FB529228DE6600013A8DA /* UIStackView+Extensions.swift */,
 				93059503228C6E7F00CB39E1 /* UITextField+Extensions.swift */,
+				9381D51F22974D0200BAE285 /* Integer+Extensions.swift */,
 				930594EC228C6E7F00CB39E1 /* UIView+Extensions.swift */,
 				930594EA228C6E7F00CB39E1 /* UIViewController+Extensions.swift */,
 			);
@@ -497,7 +517,6 @@
 				93059505228C6E7F00CB39E1 /* DatePickerViewController.swift */,
 				930FB578228F5F450013A8DA /* RangePickerViewController.swift */,
 				930FB57C2290449D0013A8DA /* ValuesPickerViewController.swift */,
-				93059506228C6E7F00CB39E1 /* PickersAssets.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -522,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				9305950E228C6E7F00CB39E1 /* URLComponents+Extensions.swift */,
+				93DF258F22A4758000B99D15 /* NSMutableData+Extensions.swift */,
 				9305950F228C6E7F00CB39E1 /* HTTPDispatcher.swift */,
 			);
 			path = HTTP;
@@ -530,7 +550,7 @@
 		93059511228C6E7F00CB39E1 /* Sportgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				93059512228C6E7F00CB39E1 /* SportgroundsResponseError.swift */,
+				93059512228C6E7F00CB39E1 /* SportsgroundsResponseError.swift */,
 				93059513228C6E7F00CB39E1 /* SportsgroundsEnvironment.swift */,
 				930FB5A62291EEE40013A8DA /* UserAPI */,
 				93059574228CA5E900CB39E1 /* GroundAPI */,
@@ -610,6 +630,7 @@
 				93059580228CAF8F00CB39E1 /* Pagination */,
 				93059581228CB00E00CB39E1 /* SGGroundResponse.swift */,
 				930FB5A42291EE560013A8DA /* SGUserResponse.swift */,
+				9381D519229740AC00BAE285 /* SGUsersResponse.swift */,
 				93059583228CB02600CB39E1 /* SGGroundsResponse.swift */,
 				9305957C228CAED600CB39E1 /* SGBasicResponse.swift */,
 				930FB5CE229370E10013A8DA /* SGMessageResponse.swift */,
@@ -648,28 +669,23 @@
 			children = (
 				930FB551228E3C570013A8DA /* SGBorderedButtonCell.swift */,
 				930FB557228EE3600013A8DA /* SGButtonCell.swift */,
-				93FC0D012295F34500DC8348 /* SGMapCell.swift */,
 				930FB508228DAA630013A8DA /* SGEventCell.swift */,
 				930FB5892291B26C0013A8DA /* SGEventDescriptionCell.swift */,
-				930FB5C6229366DD0013A8DA /* SGTextCell.swift */,
 				930FB58B2291B2890013A8DA /* SGEventDetailsCell.swift */,
 				930FB525228DD7E60013A8DA /* SGGroundCell.swift */,
 				930FB5C82293690B0013A8DA /* SGIncomeMessageCell.swift */,
+				93FC0D012295F34500DC8348 /* SGMapCell.swift */,
 				930FB5CA2293691A0013A8DA /* SGOutcomeMessageCell.swift */,
+				9381D51D22974B8A00BAE285 /* SGBigProfileCell.swift */,
+				930501FA22A2BE5A0095BFF5 /* SGSmallProfileCell.swift */,
+				9381D521229751C600BAE285 /* SGRatingCell.swift */,
 				930FB5912291B4A60013A8DA /* SGSeparatorCell.swift */,
 				930FB58D2291B3D80013A8DA /* SGTeamCell.swift */,
+				930FB5C6229366DD0013A8DA /* SGTextCell.swift */,
+				9305020222A3F1710095BFF5 /* SGPlaceholderCell.swift */,
 				930FB58F2291B3E50013A8DA /* SGUserCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		930FB53C228E09EB0013A8DA /* Grounds */ = {
-			isa = PBXGroup;
-			children = (
-				930594D2228C6E7E00CB39E1 /* SGGroundsViewController.swift */,
-				930FB52B228DE85F0013A8DA /* SGGroundViewController.swift */,
-			);
-			path = Grounds;
 			sourceTree = "<group>";
 		};
 		930FB55D228EEE200013A8DA /* Headers */ = {
@@ -680,17 +696,6 @@
 				930FB58422918D5E0013A8DA /* SGSubtitleHeaderView.swift */,
 			);
 			path = Headers;
-			sourceTree = "<group>";
-		};
-		930FB568228F45CA0013A8DA /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				930FB564228F45690013A8DA /* SGCreateEventViewController.swift */,
-				93FC0CE22294CD7700DC8348 /* Chat */,
-				930594D5228C6E7E00CB39E1 /* SGEventsViewController.swift */,
-				930FB562228F45590013A8DA /* SGEventViewController.swift */,
-			);
-			path = Events;
 			sourceTree = "<group>";
 		};
 		930FB56F228F4C8E0013A8DA /* Processes */ = {
@@ -914,26 +919,30 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-sportsgrounds/Pods-sportsgrounds-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/EmptyKit/EmptyKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleStaticMapsKit/GoogleStaticMapsKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Keyboard+LayoutGuide/KeyboardLayoutGuide.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/SPAlert/SPAlert.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/rubber-range-picker/rubber_range_picker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleStaticMapsKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardLayoutGuide.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPAlert.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/rubber_range_picker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -995,12 +1004,14 @@
 				93059554228C6E7F00CB39E1 /* Dispatcher.swift in Sources */,
 				9305952A228C6E7F00CB39E1 /* SGAuthorizationProcess.swift in Sources */,
 				93059529228C6E7F00CB39E1 /* SGProfileViewController.swift in Sources */,
+				9305020322A3F1710095BFF5 /* SGPlaceholderCell.swift in Sources */,
 				930FB57F2290533C0013A8DA /* SGEventResponse.swift in Sources */,
 				93059562228C6E7F00CB39E1 /* SGInsetedLabel.swift in Sources */,
 				930FB571228F4CE40013A8DA /* SGAuthorizationStep.swift in Sources */,
 				93059584228CB02600CB39E1 /* SGGroundsResponse.swift in Sources */,
 				93059550228C6E7F00CB39E1 /* Date+Extensions.swift in Sources */,
 				93059551228C6E7F00CB39E1 /* UITextField+Extensions.swift in Sources */,
+				9381D51E22974B8A00BAE285 /* SGBigProfileCell.swift in Sources */,
 				930FB554228ED9860013A8DA /* SGBallBeatAnimationLayer.swift in Sources */,
 				930FB52C228DE85F0013A8DA /* SGGroundViewController.swift in Sources */,
 				9305954C228C6E7F00CB39E1 /* Dictionary+Extensions.swift in Sources */,
@@ -1019,6 +1030,7 @@
 				93059531228C6E7F00CB39E1 /* SGMainFlow.swift in Sources */,
 				930FB563228F45590013A8DA /* SGEventViewController.swift in Sources */,
 				93FC0CDF2294C6A900DC8348 /* SGSocketEvent.swift in Sources */,
+				9381D51A229740AC00BAE285 /* SGUsersResponse.swift in Sources */,
 				9305957D228CAED600CB39E1 /* SGBasicResponse.swift in Sources */,
 				9305954B228C6E7F00CB39E1 /* UIRefreshControl+Extensions.swift in Sources */,
 				930FB5D5229404AB0013A8DA /* SGMessagesPaginationResponse.swift in Sources */,
@@ -1030,14 +1042,14 @@
 				930FB55A228EE7EA0013A8DA /* SGTitleHeaderView.swift in Sources */,
 				93059567228C6E7F00CB39E1 /* SGErrorLabel.swift in Sources */,
 				930FB5C7229366DD0013A8DA /* SGTextCell.swift in Sources */,
-				93059553228C6E7F00CB39E1 /* PickersAssets.swift in Sources */,
 				930FB5C92293690B0013A8DA /* SGIncomeMessageCell.swift in Sources */,
 				93059534228C6E7F00CB39E1 /* NetworkingDelay.swift in Sources */,
 				930FB56A228F47A30013A8DA /* SGCreatingEventProcess.swift in Sources */,
 				93059525228C6E7F00CB39E1 /* SGGroundsViewController.swift in Sources */,
-				9305955C228C6E7F00CB39E1 /* SportgroundsResponseError.swift in Sources */,
+				9305955C228C6E7F00CB39E1 /* SportsgroundsResponseError.swift in Sources */,
 				930FB50D228DB62F0013A8DA /* SGParticipantsLevel.swift in Sources */,
 				93FC0CB42294889800DC8348 /* SGTextView.swift in Sources */,
+				930501FF22A2D2A70095BFF5 /* SGForeignProfileViewController.swift in Sources */,
 				930FB587229190610013A8DA /* SGLoaderFooterView.swift in Sources */,
 				93059556228C6E7F00CB39E1 /* Provider.swift in Sources */,
 				930FB519228DC2680013A8DA /* SGTourney.swift in Sources */,
@@ -1100,6 +1112,7 @@
 				930FB520228DC5310013A8DA /* SGUser.swift in Sources */,
 				93059557228C6E7F00CB39E1 /* NetworkService.swift in Sources */,
 				93FC0CDA2294C60000DC8348 /* SocketEvent.swift in Sources */,
+				9381D52022974D0200BAE285 /* Integer+Extensions.swift in Sources */,
 				930FB511228DB70B0013A8DA /* SGEvent.swift in Sources */,
 				930FB50F228DB6A30013A8DA /* SGEventType.swift in Sources */,
 				930FB528228DE0050013A8DA /* SGEnvironment.swift in Sources */,
@@ -1124,12 +1137,15 @@
 				93059530228C6E7F00CB39E1 /* SGAuthorizationFlow.swift in Sources */,
 				9305955A228C6E7F00CB39E1 /* HTTPDispatcher.swift in Sources */,
 				930FB5CF229370E10013A8DA /* SGMessageResponse.swift in Sources */,
+				93DF259022A4758000B99D15 /* NSMutableData+Extensions.swift in Sources */,
 				930FB522228DC9DC0013A8DA /* SGTeam.swift in Sources */,
+				9381D522229751C600BAE285 /* SGRatingCell.swift in Sources */,
 				93059526228C6E7F00CB39E1 /* SGRegistrationViewController.swift in Sources */,
 				93FC0CC42294B37B00DC8348 /* Socket.swift in Sources */,
 				93059544228C6E7F00CB39E1 /* Formatter+Extensions.swift in Sources */,
 				930FB515228DC2540013A8DA /* SGTraining.swift in Sources */,
 				930FB58E2291B3D80013A8DA /* SGTeamCell.swift in Sources */,
+				930501FB22A2BE5A0095BFF5 /* SGSmallProfileCell.swift in Sources */,
 				930594BC228C6D9F00CB39E1 /* AppDelegate.swift in Sources */,
 				9305953B228C6E7F00CB39E1 /* StringProtocol+Extensions.swift in Sources */,
 				930FB526228DD7E60013A8DA /* SGGroundCell.swift in Sources */,

@@ -18,10 +18,11 @@ extension UIView {
         case .began:
             UIView.animate(withDuration: 0.5, animations: {
                 self.transform = .init(scaleX: 0.95, y: 0.95)
-            }, completion: {  _ in
-                event()
             })
-        case .ended, .cancelled, .failed:
+        case .ended:
+            event()
+            fallthrough
+        case .cancelled, .failed:
             UIView.animate(withDuration: 0.5, animations: {
                 self.transform = .identity
             }, completion: {  _ in
@@ -246,7 +247,7 @@ extension UIView {
 public extension UIView {
 
     /// Size of view.
-    public var size: CGSize {
+    var size: CGSize {
         get {
             return self.frame.size
         }
@@ -257,7 +258,7 @@ public extension UIView {
     }
 
     /// Width of view.
-    public var width: CGFloat {
+    var width: CGFloat {
         get {
             return self.frame.size.width
         }
@@ -267,7 +268,7 @@ public extension UIView {
     }
 
     /// Height of view.
-    public var height: CGFloat {
+    var height: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -290,9 +291,9 @@ extension UIView {
 
 public extension UIView {
 
-    public typealias Configuration = (UIView) -> Swift.Void
+    typealias Configuration = (UIView) -> Swift.Void
 
-    public func config(configurate: Configuration?) {
+    func config(configurate: Configuration?) {
         configurate?(self)
     }
 
@@ -301,7 +302,7 @@ public extension UIView {
     /// - Parameters:
     ///   - corners: array of corners to change (example: [.bottomLeft, .topRight]).
     ///   - radius: radius for selected corners.
-    public func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath

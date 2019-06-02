@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B4591ADD81E1755A639F18356E6E6CAD"
+               BlueprintIdentifier = "8E6BDD0E75BE406ADAA92AA47F940033"
                BuildableName = "rubber_range_picker.framework"
                BlueprintName = "rubber-range-picker"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B4591ADD81E1755A639F18356E6E6CAD"
+            BlueprintIdentifier = "8E6BDD0E75BE406ADAA92AA47F940033"
             BuildableName = "rubber_range_picker.framework"
             BlueprintName = "rubber-range-picker"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -30,6 +30,8 @@ class SGEventDataSourceProvider {
             return self.dataSource = []
         }
         
+        var newDataSource: [SGDataSourceProviderSection] = []
+        
         // General Info Section
         let generalInfoHeader = SGDataSourceProviderHeaderItem.title(event.title.capitalizingFirst)
         var generalInfoItems: [SGDataSourceProviderRowItem] = []
@@ -42,12 +44,16 @@ class SGEventDataSourceProvider {
         let generalInfoSection = SGDataSourceProviderSection(headerItem: generalInfoHeader,
                                                              rowItems: generalInfoItems)
         
+        newDataSource.append(generalInfoSection)
+        
         // Ground Section
         let groundHeader = SGDataSourceProviderHeaderItem.title("Площадка")
         let groundItems: [SGDataSourceProviderRowItem] = [.ground(event.ground), .map(event.ground)]
         
         let groundSection = SGDataSourceProviderSection(headerItem: groundHeader,
                                                         rowItems: groundItems)
+        
+        newDataSource.append(groundSection)
         
         // Participants Section
         let participantsHeader = SGDataSourceProviderHeaderItem.title("Участники")
@@ -102,7 +108,27 @@ class SGEventDataSourceProvider {
         let participantsSection = SGDataSourceProviderSection(headerItem: participantsHeader,
                                                               rowItems: participantsItems)
         
-        self.dataSource = [generalInfoSection, groundSection, participantsSection]
+        newDataSource.append(participantsSection)
+        
+        // Placeholder Section
+        
+        if (event.status == .ended) {
+            let placeholderItem = SGDataSourceProviderRowItem.placeholder("Это событие уже прошло", #imageLiteral(resourceName: "event.icon.placeholder.passed"))
+            let placeholderSection = SGDataSourceProviderSection(headerItem: nil,
+                                                                 rowItems: [placeholderItem])
+            
+            newDataSource.append(placeholderSection)
+        }
+        
+        if (event.status == .canceled) {
+            let placeholderItem = SGDataSourceProviderRowItem.placeholder("Это событие отменено", #imageLiteral(resourceName: "event.icon.placeholder.canceled"))
+            let placeholderSection = SGDataSourceProviderSection(headerItem: nil,
+                                                                 rowItems: [placeholderItem])
+            
+            newDataSource.append(placeholderSection)
+        }
+        
+        self.dataSource = newDataSource
     }
 }
 

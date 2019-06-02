@@ -78,6 +78,8 @@ struct HTTPDispatcher: Dispatcher {
             })
 
             urlRequest.url = urlComponents.url
+        case .formData(_)?:
+            break
         case .none:
             break
         }
@@ -93,28 +95,54 @@ struct HTTPDispatcher: Dispatcher {
             })
 
             urlRequest.url = urlComponents.url
+        case .formData(_)?:
+            break
         case .none:
             break
         }
-
-        // Add headers from environment
-        guard let headers = environment.headers as? [String: String] else {
-            throw HTTPDispatcherError.badInput
-        }
-
-        headers.forEach {
-            urlRequest.addValue($0.value, forHTTPHeaderField: $0.key)
-        }
-
-
-        // Add headers from request
-        if let requestHeaders = request.headers {
-            guard let requestHeaders = requestHeaders as? [String: String] else {
+        
+        if case let .formData(params, filename, data)? = request.parameters {
+            let boundary = "Boundary-\(UUID().uuidString)"
+            urlRequest.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            
+            let body = NSMutableData()
+            
+            let boundaryPrefix = "--\(boundary)\r\n"
+            
+            for (key, value) in params {
+                body.appendString(boundaryPrefix)
+                body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.appendString("\(value)\r\n")
+            }
+            
+            body.appendString(boundaryPrefix)
+            body.appendString("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n")
+            body.appendString("Content-Type: image/jpeg\r\n\r\n")
+            body.append(data)
+            body.appendString("\r\n")
+            body.appendString("--".appending(boundary.appending("--")))
+            
+            urlRequest.httpBody = body as Data
+        } else {
+            // Add headers from environment
+            guard let headers = environment.headers as? [String: String] else {
                 throw HTTPDispatcherError.badInput
             }
 
-            requestHeaders.forEach {
+            headers.forEach {
                 urlRequest.addValue($0.value, forHTTPHeaderField: $0.key)
+            }
+
+
+            // Add headers from request
+            if let requestHeaders = request.headers {
+                guard let requestHeaders = requestHeaders as? [String: String] else {
+                    throw HTTPDispatcherError.badInput
+                }
+
+                requestHeaders.forEach {
+                    urlRequest.addValue($0.value, forHTTPHeaderField: $0.key)
+                }
             }
         }
 

@@ -42,7 +42,8 @@ class SGEventCell: UITableViewCell {
         view.layer.cornerRadius = 12.0
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cardTouchUpInside(_:)))
-        longPressGestureRecognizer.minimumPressDuration = 0.0
+        longPressGestureRecognizer.cancelsTouchesInView = false
+        longPressGestureRecognizer.minimumPressDuration = 0.05
         view.addGestureRecognizer(longPressGestureRecognizer)
         
         shadowView.addSubview(view)
@@ -97,6 +98,8 @@ class SGEventCell: UITableViewCell {
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: -5)
         
+        button.setContentCompressionResistancePriority(UILayoutPriority(1001), for: .horizontal)
+        
         button.isUserInteractionEnabled = false
         return button
     }()
@@ -109,6 +112,8 @@ class SGEventCell: UITableViewCell {
         button.setImage(UIImage(named: "event.icon.time"), for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: -5)
+        
+        button.setContentCompressionResistancePriority(UILayoutPriority(1001), for: .horizontal)
         
         button.isUserInteractionEnabled = false
         return button
@@ -157,10 +162,15 @@ class SGEventCell: UITableViewCell {
         self.subtitleLabel.text = SGEventPhrase(activity: eventInfo.activity, eventType: eventInfo.type).phrase
         self.tapHandler = tapHandler
         
+        self.buttonsStackView.removeAllArrangedSubviews()
+        self.detailView.layer.sublayers?.forEach {
+            $0.removeFromSuperlayer()
+        }
+        
         switch eventInfo.status {
         case .processing:
             self.timeButton.removeFromSuperview()
-            self.timeButton.setTitle("До \(eventInfo.beginAt.time)", for: .normal)
+            self.timeButton.setTitle("До \(eventInfo.endAt.time)", for: .normal)
             self.buttonsStackView.addArrangedSubview(timeButton)
     
             self.detailView.fill(withGradient: UIColor.greenGradient,

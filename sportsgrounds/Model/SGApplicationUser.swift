@@ -10,18 +10,10 @@ import Foundation
 
 class SGApplicationUser {
     
-    static var shared: SGApplicationUser?
-    
-    static func save(withToken token: String, user: SGUser) -> SGApplicationUser {
-        let applicationUser = SGApplicationUser(token: token, user: user)
-        shared = applicationUser
-        return applicationUser
-    }
-    
     let token: String
-    let user: SGUser
+    var user: SGUser
     
-    private init(token: String, user: SGUser) {
+    init(token: String, user: SGUser) {
         self.token = token
         self.user = user
     }

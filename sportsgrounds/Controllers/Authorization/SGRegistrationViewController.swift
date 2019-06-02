@@ -201,7 +201,7 @@ class SGRegistrationViewController: SGViewController {
     }
     
     @objc private func buttonTouchUpInside(_ sender: UIButton) {
-        self.view.endEditing(true)
+        self.dismissKeyboard()
         
         guard let authAPI = self.authAPI,
             let userAPI = self.userAPI,
@@ -231,7 +231,7 @@ class SGRegistrationViewController: SGViewController {
             [weak self]
             token, user in
             
-            let user = SGApplicationUser.save(withToken: token, user: user)
+            let user = SGApplicationUser(token: token, user: user)
             performWithDelay {
                 self?.onEnter?(user)
             }
@@ -265,9 +265,11 @@ extension SGRegistrationViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == birthdateTextField {
+            self.dismissKeyboard()
+            
             let alert = UIAlertController(style: .actionSheet, title: "Выберите дату рождения")
             
-            alert.addDatePicker(mode: .date, date: Date(), minimumDate: nil, maximumDate: Date()) {
+            alert.addDatePicker(mode: .date, date: processController?.birthdate, minimumDate: nil, maximumDate: Date()) {
                 date in
                 
                 textField.text = date.longFormatted
@@ -276,7 +278,8 @@ extension SGRegistrationViewController: UITextFieldDelegate {
                 
                 self.errorLabel.text = nil
             }
-            alert.addAction(title: "Отменить", style: .cancel)
+            
+            alert.addAction(title: "Готово", style: .cancel)
             alert.show()
             
             return false

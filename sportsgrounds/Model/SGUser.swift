@@ -18,7 +18,7 @@ class SGUser: Decodable, Equatable, Parsable {
     let birthdate: Date
     
     let rating: Int
-    let rated: Bool?
+    let rated: Bool
     
     let imageUrl: URL?
     
@@ -39,7 +39,7 @@ class SGUser: Decodable, Equatable, Parsable {
         surname = try container.decode(String.self, forKey: .surname)
         birthdate = try container.decode(Date.self, forKey: .birthdate)
         rating = try container.decode(Int.self, forKey: .rating)
-        rated = try container.decodeIfPresent(Bool.self, forKey: .rated)
+        rated = try container.decodeIfPresent(Bool.self, forKey: .rated) ?? false
         
         if let imageUrlString = try container.decodeIfPresent(String.self, forKey: .imageUrl) {
             imageUrl = URL(string: SportsgroundsEnvironment().host + imageUrlString)

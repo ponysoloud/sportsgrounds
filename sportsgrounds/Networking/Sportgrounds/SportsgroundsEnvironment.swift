@@ -11,7 +11,7 @@ import Foundation
 struct SportsgroundsEnvironment: Environment {
 
     var host: String {
-        return "http://127.0.0.1:5000"
+        return "https://sportsgrounds-api.herokuapp.com"
     }
 
     var parameters: RequestParams? {

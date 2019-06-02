@@ -42,7 +42,8 @@ class SGMapCell: UITableViewCell {
         imageView.layer.cornerRadius = 12.0
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(mapTouchUpInside(_:)))
-        longPressGestureRecognizer.minimumPressDuration = 0.0
+        longPressGestureRecognizer.cancelsTouchesInView = false
+        longPressGestureRecognizer.minimumPressDuration = 0.05
         imageView.addGestureRecognizer(longPressGestureRecognizer)
         imageView.isUserInteractionEnabled = true
         
@@ -125,8 +126,8 @@ class SGMapCell: UITableViewCell {
                                                 
             },
                                                completion: {
-                                                [unowned self] in
-                                                self.mapImageView.isUserInteractionEnabled = true
+                                                [weak self] in
+                                                self?.mapImageView.isUserInteractionEnabled = true
             })
     }
 }

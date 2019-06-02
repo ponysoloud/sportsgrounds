@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 [unowned self]
                 token, user in
                 
-                let user = SGApplicationUser.save(withToken: token, user: user)
+                let user = SGApplicationUser(token: token, user: user)
                 let screenFlow = SGMainFlow(navigationController: navigationController, user: user, socketsProvider: socketsProvider)
                 
                 self.mainScreenFlow = screenFlow

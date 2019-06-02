@@ -57,6 +57,8 @@ final class SGMainFlow: SGScreenFlow {
         return tabBarController
     }
     
+    // MARK: - Grounds
+    
     private var groundsScreen: SGGroundsViewController {
         let vc = SGGroundsViewController(user: user)
         vc.accessibilityViewIsModal = true
@@ -97,7 +99,21 @@ final class SGMainFlow: SGScreenFlow {
             vc.navigationController?.pushViewController(target, animated: true)
         }
         
+        let onMap: (SGCoordinate) -> Void = {
+            [unowned self, unowned vc] coordinates in
+            
+            let tabBarController = self.navigationController.viewControllers.first as? UITabBarController
+            tabBarController?.selectedIndex = 0
+            vc.dismiss(animated: true, completion: {
+                if let groundsNavigationController = tabBarController?.viewControllers?.first as? UINavigationController,
+                    let groundsViewController = groundsNavigationController.viewControllers.first as? SGGroundsViewController {
+                    groundsViewController.showGrounds(inLocation: coordinates)
+                }
+            })
+        }
+        
         vc.onEvent = onEvent
+        vc.onMap = onMap
         vc.onAddEvent = onAddEvent
         vc.eventAPI = EventAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
         vc.groundAPI = GroundAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
@@ -125,7 +141,9 @@ final class SGMainFlow: SGScreenFlow {
             guard let viewControllers = vc.navigationController?.viewControllers else {
                 return
             }
-            let newViewControllers = viewControllers.filter { !($0 is SGCreateEventViewController) }
+            let newViewControllers = viewControllers.filter {
+                !($0 is SGCreateEventViewController) && !($0 is SGLoaderViewController)
+            }
             vc.navigationController?.setViewControllers(newViewControllers, animated: true)
         }
         
@@ -176,9 +194,24 @@ final class SGMainFlow: SGScreenFlow {
             })
         }
         
+        let onParticipant: (SGUser) -> Void = {
+            [unowned self, unowned vc] user in
+            
+            if user.id == self.user.user.id {
+                let tabBarController = self.navigationController.viewControllers.first as? UITabBarController
+                tabBarController?.selectedIndex = 2
+                vc.dismiss(animated: true, completion: nil)
+            } else {
+                let target = self.foreignProfileScreen
+                target.foreigner = user
+                vc.navigationController?.pushViewController(target, animated: true)
+            }
+        }
+        
         vc.onChat = onChat
         vc.onGround = onGround
         vc.onMap = onMap
+        vc.onParticipant = onParticipant
         vc.eventAPI = EventAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
         vc.flow = self
         return vc
@@ -192,6 +225,8 @@ final class SGMainFlow: SGScreenFlow {
         vc.flow = self
         return vc
     }
+    
+    // MARK: - Events
     
     private var eventsScreen: SGEventsViewController {
         let vc = SGEventsViewController(user: user)
@@ -211,10 +246,65 @@ final class SGMainFlow: SGScreenFlow {
         return vc
     }
     
+    // MARK: - Profile
+    
     private var profileScreen: SGProfileViewController {
-        let vc = SGProfileViewController()
-
+        let vc = SGProfileViewController(user: user)
+        
+        let onEvent: (Int) -> Void = {
+            [unowned self, unowned vc] eventId in
+            
+            let target = self.eventScreen
+            target.eventId = eventId
+            let navigationController = UINavigationController.main(withRootViewController: target)
+            vc.present(navigationController, animated: true, completion: nil)
+        }
+        
+        let onExit: () -> Void = {
+            [unowned self] in
+            
+            let target = self.authorizationFlow
+            target.begin()
+        }
+        
+        let onParticipant: (SGUser) -> Void = {
+            [unowned self, unowned vc] user in
+            
+            let target = self.foreignProfileScreen
+            target.foreigner = user
+            vc.navigationController?.pushViewController(target, animated: true)
+        }
+        
+        vc.onExit = onExit
+        vc.onEvent = onEvent
+        vc.onParticipant = onParticipant
+        vc.authAPI = AuthAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
+        vc.userAPI = UserAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
+        vc.eventAPI = EventAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
         vc.flow = self
         return vc
+    }
+    
+    private var foreignProfileScreen: SGForeignProfileViewController {
+        let vc = SGForeignProfileViewController(user: user)
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        let onEvent: (Int) -> Void = {
+            [unowned self, unowned vc] eventId in
+            
+            let target = self.eventScreen
+            target.eventId = eventId
+            vc.navigationController?.pushViewController(target, animated: true)
+        }
+        
+        vc.onEvent = onEvent
+        vc.userAPI = UserAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
+        vc.eventAPI = EventAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
+        vc.flow = self
+        return vc
+    }
+    
+    private var authorizationFlow: SGAuthorizationFlow {
+        return SGAuthorizationFlow(navigationController: navigationController, socketsProvider: socketsProvider)
     }
 }

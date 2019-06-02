@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum SGDataSourceProviderRowItem {
     case ground(SGGround)
@@ -17,6 +18,7 @@ enum SGDataSourceProviderRowItem {
     case user(SGUser, isOwner: Bool, isYou: Bool)
     case button(String, teamId: Int)
     case map(SGGround)
+    case placeholder(String, UIImage)
     case separator
 }
 

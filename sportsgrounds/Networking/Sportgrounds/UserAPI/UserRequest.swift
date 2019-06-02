@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import UIKit
 
 enum UserRequest: Request {
     
     case getUser(token: String, userId: Int?)
-    case editUser(token: String, image: UIImage)
-    case getTeammates(token: String, userId: Int)
+    case editUser(token: String, data: Data)
+    case getTeammates(token: String, userId: Int, count: Int?)
 
     case rateUser(token: String, userId: Int)
     case unrateUser(token: String, userId: Int)
@@ -28,7 +27,7 @@ enum UserRequest: Request {
             }
         case .editUser:
             return "user"
-        case let .getTeammates(token: _, userId: id):
+        case let .getTeammates(token: _, userId: id, count: _):
             return "users/\(id)/teammates"
         case let .rateUser(token: _, userId: id):
             return "users/\(id)/actions/rate"
@@ -56,10 +55,13 @@ enum UserRequest: Request {
         switch self {
         case .getUser:
             return nil
-        case let .editUser(token: _, image: image):
-            return nil
-        case .getTeammates:
-            return nil
+        case let .editUser(token: _, data: data):
+            return RequestParams.formData([:], "image.jpg", data)
+        case let .getTeammates(token: _, userId: _, count: count):
+            let dict = [
+                "count": String(count)
+            ]
+            return RequestParams.url(dict.unwrapped())
         case .rateUser:
             return nil
         case .unrateUser:
@@ -71,9 +73,9 @@ enum UserRequest: Request {
         switch self {
         case .getUser(token: let token, userId: _):
             return ["Authorization": "Bearer \(token)"]
-        case .editUser(token: let token, image: _):
+        case .editUser(token: let token, data: _):
             return ["Authorization": "Bearer \(token)"]
-        case .getTeammates(token: let token, userId: _):
+        case .getTeammates(token: let token, userId: _, count: _):
             return ["Authorization": "Bearer \(token)"]
         case .rateUser(token: let token, userId: _):
             return ["Authorization": "Bearer \(token)"]

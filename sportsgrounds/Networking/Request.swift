@@ -28,4 +28,5 @@ enum HTTPMethod: String {
 enum RequestParams {
     case body([String: Any])
     case url([String: String])
+    case formData([String: String], String, Data)
 }

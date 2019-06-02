@@ -24,6 +24,7 @@ class SGIncomeMessageCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .appLightGray
         view.layer.masksToBounds = true
+        view.layer.cornerRadius = 30.0
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(cloudTouchUpInside(_:)))
         view.addGestureRecognizer(tapGestureRecognizer)
@@ -79,16 +80,16 @@ class SGIncomeMessageCell: UITableViewCell {
         self.setupSubviewsLayout()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let contentInsets = SGIncomeMessageCell.contentInsets
-        self.cloudView.layer.cornerRadius = (self.height - contentInsets.top - contentInsets.bottom) / 2
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        let contentInsets = SGIncomeMessageCell.contentInsets
+//        self.cloudView.layer.cornerRadius = (self.height - contentInsets.top - contentInsets.bottom) / 2
+//    }
     
     // MARK: - Public functions
     
     static func height(forMessage message: SGMessage, width: CGFloat) -> CGFloat {
-        let contentWidth = width - contentInsets.left - contentInsets.right
+        let contentWidth = width - contentInsets.left - contentInsets.right - 28 - 28
         return contentInsets.top
             + 15
             + "\(message.sender.surname) \(message.sender.name)".height(withConstrainedWidth: contentWidth, font: .smallTextFont)

@@ -30,6 +30,14 @@ extension UIFont {
         return UIFont.systemFont(ofSize: 14, weight: .semibold)
     }
     
+    class var subtitle3Font: UIFont {
+        return UIFont.systemFont(ofSize: 16, weight: .semibold)
+    }
+    
+    class var subtitle4Font: UIFont {
+        return UIFont.systemFont(ofSize: 16, weight: .regular)
+    }
+    
     class var largeTextFont: UIFont {
         return UIFont.systemFont(ofSize: 18, weight: .medium)
     }

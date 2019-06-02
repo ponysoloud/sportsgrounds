@@ -24,6 +24,7 @@ class SGOutcomeMessageCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .appBlue
         view.layer.masksToBounds = true
+        view.layer.cornerRadius = 30.0
         
         contentView.addSubview(view)
         return view
@@ -74,16 +75,10 @@ class SGOutcomeMessageCell: UITableViewCell {
         self.setupSubviewsLayout()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let contentInsets = SGOutcomeMessageCell.contentInsets
-        self.cloudView.layer.cornerRadius = (self.height - contentInsets.top - contentInsets.bottom) / 2
-    }
-    
     // MARK: - Public functions
     
     static func height(forMessage message: SGMessage, width: CGFloat) -> CGFloat {
-        let contentWidth = width - contentInsets.left - contentInsets.right
+        let contentWidth = width - contentInsets.left - contentInsets.right - 28 - 28
         return contentInsets.top
             + 15
             + "\(message.sender.surname) \(message.sender.name)".height(withConstrainedWidth: contentWidth, font: .smallTextFont)

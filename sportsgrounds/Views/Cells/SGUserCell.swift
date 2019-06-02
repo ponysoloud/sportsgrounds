@@ -53,7 +53,7 @@ class SGUserCell: UITableViewCell {
         button.backgroundColor = .clear
         button.titleLabel?.font = UIFont.smallTextFont
         button.setTitleColor(.appBlack, for: .normal)
-        button.setImage(UIImage(named: "user.icon.rating"), for: .normal)
+        button.setImage(UIImage(named: "user.icon.rating.small"), for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: -5)
         
@@ -102,13 +102,18 @@ class SGUserCell: UITableViewCell {
                    isYou: Bool,
                    style: Style,
                    tapHandler: @escaping (SGUserCell) -> Void) {
+        
+        if let avatarUrl = user.imageUrl {
+            self.avatarImageView.load(url: avatarUrl, placeholder: #imageLiteral(resourceName: "user.avatar.placeholder"))
+        }
+        
         self.hostImageView.isHidden = !isOwner
         self.nameLabel.textColor = isYou ? .appBlue : .appBlack
         
         self.nameLabel.text = "\(user.surname) \(user.name)"
         self.ageLabel.text = "\(user.birthdate.age) лет"
         
-        self.ratingButton.isHidden = user.rating > 0
+        self.ratingButton.isHidden = !(user.rating > 0)
         self.ratingButton.setTitle(user.rating.description, for: .normal)
         
         switch style {

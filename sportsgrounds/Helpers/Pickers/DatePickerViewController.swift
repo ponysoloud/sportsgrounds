@@ -24,6 +24,7 @@ final class DatePickerViewController: UIViewController {
     fileprivate var action: Action?
     
     fileprivate lazy var datePicker: UIDatePicker = { [unowned self] in
+        $0.locale = Locale(identifier: "ru_RU")
         $0.addTarget(self, action: #selector(DatePickerViewController.actionForDatePicker), for: .valueChanged)
         return $0
     }(UIDatePicker())
@@ -34,6 +35,7 @@ final class DatePickerViewController: UIViewController {
         datePicker.date = date ?? Date()
         datePicker.minimumDate = minimumDate
         datePicker.maximumDate = maximumDate
+        
         self.action = action
     }
     

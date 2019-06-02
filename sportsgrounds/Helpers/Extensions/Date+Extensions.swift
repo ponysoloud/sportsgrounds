@@ -34,6 +34,7 @@ extension Date {
     
     var timeRecentFormatted: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "HH:mm dd.MM"
         
         dateFormatter.setLocalizedDateFormatFromTemplate(format)
@@ -42,6 +43,7 @@ extension Date {
     
     var recentFormatted: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "dd.MM"
         
         dateFormatter.setLocalizedDateFormatFromTemplate(format)
@@ -50,6 +52,7 @@ extension Date {
     
     var longFormatted: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "d MMM yyyy"
         
         dateFormatter.setLocalizedDateFormatFromTemplate(format)
@@ -58,6 +61,7 @@ extension Date {
     
     var fullFormatted: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "MMM d, HH:mm"
         
         dateFormatter.setLocalizedDateFormatFromTemplate(format)
@@ -69,6 +73,7 @@ extension Date {
 
     var time: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "HH:mm"
 
         dateFormatter.setLocalizedDateFormatFromTemplate(format)
@@ -77,6 +82,7 @@ extension Date {
 
     var day: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "dd"
 
         dateFormatter.setLocalizedDateFormatFromTemplate(format)
@@ -85,6 +91,7 @@ extension Date {
 
     var year: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "yyyy"
 
         dateFormatter.setLocalizedDateFormatFromTemplate(format)
@@ -93,6 +100,7 @@ extension Date {
 
     var timeZone: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let format = "ZZZZZ"
 
         dateFormatter.setLocalizedDateFormatFromTemplate(format)

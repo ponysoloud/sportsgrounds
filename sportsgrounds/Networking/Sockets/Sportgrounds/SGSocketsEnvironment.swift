@@ -12,7 +12,7 @@ import SocketIO
 struct SGSocketsEnvironment: SocketsEnvironment {
     
     var host: URL {
-        return URL(string: "http://127.0.0.1:5000")!
+        return URL(string: "https://sportsgrounds-api.herokuapp.com")!
     }
     
     var parameters: SocketIOClientConfiguration {

@@ -22,8 +22,8 @@ extension UIAlertController {
     
     func addRangePicker(lowerValue: Int? = nil,
                         upperValue: Int? = nil,
-                        minimumValue: Int? = nil,
-                        maximumValue: Int? = nil,
+                        minimumValue: Int,
+                        maximumValue: Int,
                         action: RangePickerViewController.Action?) {
         
         let rangePicker = RangePickerViewController(lowerValue: lowerValue,
@@ -63,22 +63,20 @@ final class RangePickerViewController: UIViewController {
     
     required init(lowerValue: Int? = nil,
                   upperValue: Int? = nil,
-                  minimumValue: Int? = nil,
-                  maximumValue: Int? = nil,
+                  minimumValue: Int,
+                  maximumValue: Int,
                   action: Action?) {
         
         super.init(nibName: nil, bundle: nil)
         self.action = action
         
-        if let minimumValue = minimumValue {
-            self.rangePicker.lowerValue = Double(lowerValue ?? minimumValue)
-            self.rangePicker.minimumValue = Double(minimumValue)
-        }
+        self.rangePicker.minimumValue = Double(minimumValue)
+        self.rangePicker.lowerValue = Double(lowerValue ?? minimumValue)
         
-        if let maximumValue = maximumValue {
-            self.rangePicker.upperValue = Double(upperValue ?? maximumValue)
-            self.rangePicker.maximumValue = Double(maximumValue)
-        }
+        self.rangePicker.maximumValue = Double(maximumValue)
+        self.rangePicker.upperValue = Double(upperValue ?? maximumValue)
+        
+        self.label.text = self.action?(lowerValue ?? minimumValue, upperValue ?? maximumValue)
     }
     
     required init?(coder aDecoder: NSCoder) {
