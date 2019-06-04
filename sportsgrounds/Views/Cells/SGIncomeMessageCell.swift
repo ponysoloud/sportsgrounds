@@ -24,7 +24,7 @@ class SGIncomeMessageCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .appLightGray
         view.layer.masksToBounds = true
-        view.layer.cornerRadius = 30.0
+        view.layer.cornerRadius = 24.0
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(cloudTouchUpInside(_:)))
         view.addGestureRecognizer(tapGestureRecognizer)
@@ -35,7 +35,7 @@ class SGIncomeMessageCell: UITableViewCell {
     
     private lazy var userLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .appLightBlack
+        label.textColor = .appSecondaryBlack
         label.font = .smallTextFont
         label.textAlignment = .left
         label.numberOfLines = 1
@@ -46,9 +46,9 @@ class SGIncomeMessageCell: UITableViewCell {
     
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .appLightBlack
-        label.font = .smallTextFont
-        label.textAlignment = .left
+        label.textColor = .appSecondaryBlack
+        label.font = .supersmallTextFont
+        label.textAlignment = .right
         label.numberOfLines = 1
         
         cloudView.addSubview(label)
@@ -89,13 +89,11 @@ class SGIncomeMessageCell: UITableViewCell {
     // MARK: - Public functions
     
     static func height(forMessage message: SGMessage, width: CGFloat) -> CGFloat {
-        let contentWidth = width - contentInsets.left - contentInsets.right - 28 - 28
+        let contentWidth = width - contentInsets.left - contentInsets.right - 30
         return contentInsets.top
-            + 15
-            + "\(message.sender.surname) \(message.sender.name)".height(withConstrainedWidth: contentWidth, font: .smallTextFont)
-            + 3
+            + 27
             + message.text.height(withConstrainedWidth: contentWidth, font: .mediumTextFont)
-            + 15
+            + 23
             + contentInsets.bottom
     }
     
@@ -122,19 +120,20 @@ class SGIncomeMessageCell: UITableViewCell {
             cloudView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: contentInsets.top),
             cloudView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: contentInsets.left),
             cloudView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -contentInsets.bottom),
-            cloudView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -contentInsets.right),
+            cloudView.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -contentInsets.right),
+            cloudView.widthAnchor.constraint(greaterThanOrEqualToConstant: 100.0),
             
-            userLabel.topAnchor.constraint(equalTo: cloudView.topAnchor, constant: 15),
-            userLabel.leftAnchor.constraint(equalTo: cloudView.leftAnchor, constant: 28),
+            userLabel.topAnchor.constraint(equalTo: cloudView.topAnchor, constant: 10),
+            userLabel.leftAnchor.constraint(equalTo: cloudView.leftAnchor, constant: 15),
+            userLabel.rightAnchor.constraint(equalTo: cloudView.rightAnchor, constant: -10),
             
-            dateLabel.topAnchor.constraint(equalTo: cloudView.topAnchor, constant: 15),
-            dateLabel.leftAnchor.constraint(equalTo: userLabel.rightAnchor, constant: 10),
-            dateLabel.rightAnchor.constraint(equalTo: cloudView.rightAnchor, constant: -28),
+            dateLabel.bottomAnchor.constraint(equalTo: cloudView.bottomAnchor, constant: -7),
+            dateLabel.rightAnchor.constraint(equalTo: cloudView.rightAnchor, constant: -15),
             
-            messageLabel.topAnchor.constraint(equalTo: userLabel.bottomAnchor, constant: 3),
-            messageLabel.leftAnchor.constraint(equalTo: cloudView.leftAnchor, constant: 28),
-            messageLabel.bottomAnchor.constraint(equalTo: cloudView.bottomAnchor, constant: -15),
-            messageLabel.rightAnchor.constraint(equalTo: cloudView.rightAnchor, constant: -28)
+            messageLabel.topAnchor.constraint(equalTo: cloudView.topAnchor, constant: 27),
+            messageLabel.leftAnchor.constraint(equalTo: cloudView.leftAnchor, constant: 15),
+            messageLabel.bottomAnchor.constraint(equalTo: cloudView.bottomAnchor, constant: -23),
+            messageLabel.rightAnchor.constraint(equalTo: cloudView.rightAnchor, constant: -15)
             ])
     }
     

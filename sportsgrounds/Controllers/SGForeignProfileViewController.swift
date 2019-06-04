@@ -30,7 +30,7 @@ class SGForeignProfileViewController: SGViewController {
         tableView.register(SGSmallProfileCell.self, forCellReuseIdentifier: SGSmallProfileCell.reuseIdentifier)
         tableView.register(SGRatingCell.self, forCellReuseIdentifier: SGRatingCell.reuseIdentifier)
         
-        tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 15, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none

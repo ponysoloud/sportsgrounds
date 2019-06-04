@@ -11,7 +11,7 @@ import Foundation
 enum UserRequest: Request {
     
     case getUser(token: String, userId: Int?)
-    case editUser(token: String, data: Data)
+    case editUser(token: String, imageName: String, imageData: Data)
     case getTeammates(token: String, userId: Int, count: Int?)
 
     case rateUser(token: String, userId: Int)
@@ -55,8 +55,15 @@ enum UserRequest: Request {
         switch self {
         case .getUser:
             return nil
-        case let .editUser(token: _, data: data):
-            return RequestParams.formData([:], "image.jpg", data)
+        case let .editUser(token: _, imageName: name, imageData: image):
+            let imageString = image.base64EncodedString(options: .lineLength64Characters)
+            
+            let dict = [
+                "imageName": name,
+                "image": imageString
+            ]
+            
+            return RequestParams.body(dict)
         case let .getTeammates(token: _, userId: _, count: count):
             let dict = [
                 "count": String(count)
@@ -73,7 +80,7 @@ enum UserRequest: Request {
         switch self {
         case .getUser(token: let token, userId: _):
             return ["Authorization": "Bearer \(token)"]
-        case .editUser(token: let token, data: _):
+        case .editUser(token: let token, imageName: _, imageData: _):
             return ["Authorization": "Bearer \(token)"]
         case .getTeammates(token: let token, userId: _, count: _):
             return ["Authorization": "Bearer \(token)"]

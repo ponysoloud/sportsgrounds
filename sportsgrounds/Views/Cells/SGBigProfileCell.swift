@@ -61,6 +61,11 @@ class SGBigProfileCell: UITableViewCell {
     
     // MARK: - UICollectionView hierarchy
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.avatarImageView.image = UIImage(named: "user.avatar.placeholder")
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupSubviewsLayout()
@@ -92,7 +97,7 @@ class SGBigProfileCell: UITableViewCell {
                    tapHandler: @escaping (SGBigProfileCell) -> Void) {
         
         if let avatarUrl = user.imageUrl {
-            self.avatarImageView.load(url: avatarUrl, placeholder: #imageLiteral(resourceName: "user.avatar.placeholder"))
+            self.avatarImageView.load(url: avatarUrl, placeholder: nil)
         }
         
         self.nameLabel.text = "\(user.surname) \(user.name)"

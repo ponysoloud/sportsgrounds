@@ -86,7 +86,14 @@ class SGRatingCell: UITableViewCell {
         var subtitleText: String
         
         if rating > 0 {
-            titleText = "Вас отметило \(rating) человек"
+            if rating == 1 {
+                titleText = "Вас отметил \(rating) человек"
+            } else if rating < 5 {
+                titleText = "Вас отметило \(rating) человека"
+            } else {
+                titleText = "Вас отметило \(rating) человек"
+            }
+            
             subtitleText = "Отмечайте и вы других, чтобы все знали с кем можно приятно позаниматься"
         } else {
             titleText = "Вас пока еще не отметили"

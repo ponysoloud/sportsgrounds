@@ -34,7 +34,7 @@ class SGProfileViewController: SGViewController {
         tableView.register(SGBigProfileCell.self, forCellReuseIdentifier: SGBigProfileCell.reuseIdentifier)
         tableView.register(SGRatingCell.self, forCellReuseIdentifier: SGRatingCell.reuseIdentifier)
         
-        tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
@@ -131,6 +131,12 @@ class SGProfileViewController: SGViewController {
         config.library.numberOfItemsInRow = 4
         config.library.spacingBetweenItems = 1.0
         config.library.skipSelectionsGallery = false
+        config.wordings.cancel = "Отмена"
+        config.wordings.filter = "Фильтры"
+        config.wordings.albumsTitle = "Альбомы"
+        config.wordings.libraryTitle = "Библиотека"
+        config.wordings.cameraTitle = "Камера"
+        config.wordings.next = "Ок"
         
         return config
     }

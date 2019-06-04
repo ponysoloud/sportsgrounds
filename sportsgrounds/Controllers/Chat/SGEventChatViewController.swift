@@ -181,7 +181,7 @@ class SGEventChatViewController: SGViewController {
             let old = self.messages
             let new = messagesPage.messages
             
-            self.messages.append(new)
+            self.messages.append(contentsOf: new)
             self.hasNext = messagesPage.next != nil
             
             self.tableView.setContentOffset(self.tableView.contentOffset, animated: false)

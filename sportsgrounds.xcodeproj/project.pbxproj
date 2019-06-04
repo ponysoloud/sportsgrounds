@@ -32,11 +32,9 @@
 		93059532228C6E7F00CB39E1 /* SGFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594E2228C6E7F00CB39E1 /* SGFlowViewController.swift */; };
 		93059533228C6E7F00CB39E1 /* SGScreenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594E3228C6E7F00CB39E1 /* SGScreenFlow.swift */; };
 		93059534228C6E7F00CB39E1 /* NetworkingDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594E5228C6E7F00CB39E1 /* NetworkingDelay.swift */; };
-		93059535228C6E7F00CB39E1 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594E7228C6E7F00CB39E1 /* Array+Extensions.swift */; };
 		93059536228C6E7F00CB39E1 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594E8228C6E7F00CB39E1 /* UIImageView+Extensions.swift */; };
 		93059538228C6E7F00CB39E1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594EA228C6E7F00CB39E1 /* UIViewController+Extensions.swift */; };
 		9305953A228C6E7F00CB39E1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594EC228C6E7F00CB39E1 /* UIView+Extensions.swift */; };
-		9305953B228C6E7F00CB39E1 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594ED228C6E7F00CB39E1 /* StringProtocol+Extensions.swift */; };
 		9305953C228C6E7F00CB39E1 /* PHAsset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594EE228C6E7F00CB39E1 /* PHAsset+Extensions.swift */; };
 		9305953D228C6E7F00CB39E1 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594EF228C6E7F00CB39E1 /* String+Extensions.swift */; };
 		9305953E228C6E7F00CB39E1 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594F0228C6E7F00CB39E1 /* UIColor+Additions.swift */; };
@@ -49,10 +47,8 @@
 		93059545228C6E7F00CB39E1 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594F7228C6E7F00CB39E1 /* UIAlertController+Extensions.swift */; };
 		93059546228C6E7F00CB39E1 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594F8228C6E7F00CB39E1 /* UINavigationController+Extensions.swift */; };
 		93059547228C6E7F00CB39E1 /* NSRange+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594F9228C6E7F00CB39E1 /* NSRange+Extensions.swift */; };
-		93059549228C6E7F00CB39E1 /* CAGradientLayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594FB228C6E7F00CB39E1 /* CAGradientLayer+Extensions.swift */; };
 		9305954B228C6E7F00CB39E1 /* UIRefreshControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594FD228C6E7F00CB39E1 /* UIRefreshControl+Extensions.swift */; };
 		9305954C228C6E7F00CB39E1 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594FE228C6E7F00CB39E1 /* Dictionary+Extensions.swift */; };
-		9305954D228C6E7F00CB39E1 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930594FF228C6E7F00CB39E1 /* UIScrollView+Extensions.swift */; };
 		93059550228C6E7F00CB39E1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059502228C6E7F00CB39E1 /* Date+Extensions.swift */; };
 		93059551228C6E7F00CB39E1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059503228C6E7F00CB39E1 /* UITextField+Extensions.swift */; };
 		93059552228C6E7F00CB39E1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93059505228C6E7F00CB39E1 /* DatePickerViewController.swift */; };
@@ -202,11 +198,9 @@
 		930594E2228C6E7F00CB39E1 /* SGFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFlowViewController.swift; sourceTree = "<group>"; };
 		930594E3228C6E7F00CB39E1 /* SGScreenFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGScreenFlow.swift; sourceTree = "<group>"; };
 		930594E5228C6E7F00CB39E1 /* NetworkingDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingDelay.swift; sourceTree = "<group>"; };
-		930594E7228C6E7F00CB39E1 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		930594E8228C6E7F00CB39E1 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		930594EA228C6E7F00CB39E1 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		930594EC228C6E7F00CB39E1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		930594ED228C6E7F00CB39E1 /* StringProtocol+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Extensions.swift"; sourceTree = "<group>"; };
 		930594EE228C6E7F00CB39E1 /* PHAsset+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHAsset+Extensions.swift"; sourceTree = "<group>"; };
 		930594EF228C6E7F00CB39E1 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		930594F0228C6E7F00CB39E1 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
@@ -219,10 +213,8 @@
 		930594F7228C6E7F00CB39E1 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		930594F8228C6E7F00CB39E1 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		930594F9228C6E7F00CB39E1 /* NSRange+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+Extensions.swift"; sourceTree = "<group>"; };
-		930594FB228C6E7F00CB39E1 /* CAGradientLayer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extensions.swift"; sourceTree = "<group>"; };
 		930594FD228C6E7F00CB39E1 /* UIRefreshControl+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extensions.swift"; sourceTree = "<group>"; };
 		930594FE228C6E7F00CB39E1 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
-		930594FF228C6E7F00CB39E1 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		93059502228C6E7F00CB39E1 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		93059503228C6E7F00CB39E1 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		93059505228C6E7F00CB39E1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -480,8 +472,6 @@
 		930594E6228C6E7F00CB39E1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				930594E7228C6E7F00CB39E1 /* Array+Extensions.swift */,
-				930594FB228C6E7F00CB39E1 /* CAGradientLayer+Extensions.swift */,
 				930FB582229081360013A8DA /* UIWindow+Extensions.swift */,
 				93059590228CCE2C00CB39E1 /* CLLocationCoordinate2D+Extensions.swift */,
 				93059502228C6E7F00CB39E1 /* Date+Extensions.swift */,
@@ -491,7 +481,6 @@
 				930594F4228C6E7F00CB39E1 /* NumberFormatter+Extensions.swift */,
 				930594EE228C6E7F00CB39E1 /* PHAsset+Extensions.swift */,
 				930594EF228C6E7F00CB39E1 /* String+Extensions.swift */,
-				930594ED228C6E7F00CB39E1 /* StringProtocol+Extensions.swift */,
 				930594F7228C6E7F00CB39E1 /* UIAlertController+Extensions.swift */,
 				930594F5228C6E7F00CB39E1 /* UIApplication+Extensions.swift */,
 				930594F0228C6E7F00CB39E1 /* UIColor+Additions.swift */,
@@ -501,7 +490,6 @@
 				930594E8228C6E7F00CB39E1 /* UIImageView+Extensions.swift */,
 				930594F8228C6E7F00CB39E1 /* UINavigationController+Extensions.swift */,
 				930594FD228C6E7F00CB39E1 /* UIRefreshControl+Extensions.swift */,
-				930594FF228C6E7F00CB39E1 /* UIScrollView+Extensions.swift */,
 				930FB529228DE6600013A8DA /* UIStackView+Extensions.swift */,
 				93059503228C6E7F00CB39E1 /* UITextField+Extensions.swift */,
 				9381D51F22974D0200BAE285 /* Integer+Extensions.swift */,
@@ -1034,7 +1022,6 @@
 				9305957D228CAED600CB39E1 /* SGBasicResponse.swift in Sources */,
 				9305954B228C6E7F00CB39E1 /* UIRefreshControl+Extensions.swift in Sources */,
 				930FB5D5229404AB0013A8DA /* SGMessagesPaginationResponse.swift in Sources */,
-				93059535228C6E7F00CB39E1 /* Array+Extensions.swift in Sources */,
 				930FB59E2291CD610013A8DA /* SGEventPhrase.swift in Sources */,
 				930FB57B229021AC0013A8DA /* SGCaseNameable.swift in Sources */,
 				930FB5CD22936C090013A8DA /* SGMessage.swift in Sources */,
@@ -1056,7 +1043,6 @@
 				930FB57D2290449D0013A8DA /* ValuesPickerViewController.swift in Sources */,
 				930FB58C2291B2890013A8DA /* SGEventDetailsCell.swift in Sources */,
 				93FC0CC22294B26600DC8348 /* SGSocketsProvider.swift in Sources */,
-				9305954D228C6E7F00CB39E1 /* UIScrollView+Extensions.swift in Sources */,
 				93FC0CC62294B3AF00DC8348 /* SocketsProvider.swift in Sources */,
 				9305955F228C6E7F00CB39E1 /* EventRequest.swift in Sources */,
 				9305957F228CAF0E00CB39E1 /* SGTokenResponse.swift in Sources */,
@@ -1094,7 +1080,6 @@
 				9305958B228CB9A800CB39E1 /* SGCoordinate.swift in Sources */,
 				93059540228C6E7F00CB39E1 /* UIImage+Extensions.swift in Sources */,
 				930FB52A228DE6600013A8DA /* UIStackView+Extensions.swift in Sources */,
-				93059549228C6E7F00CB39E1 /* CAGradientLayer+Extensions.swift in Sources */,
 				93059552228C6E7F00CB39E1 /* DatePickerViewController.swift in Sources */,
 				93FC0CD02294C01000DC8348 /* SocketsEnvironment.swift in Sources */,
 				93059573228CA5D800CB39E1 /* GroundRequest.swift in Sources */,
@@ -1147,7 +1132,6 @@
 				930FB58E2291B3D80013A8DA /* SGTeamCell.swift in Sources */,
 				930501FB22A2BE5A0095BFF5 /* SGSmallProfileCell.swift in Sources */,
 				930594BC228C6D9F00CB39E1 /* AppDelegate.swift in Sources */,
-				9305953B228C6E7F00CB39E1 /* StringProtocol+Extensions.swift in Sources */,
 				930FB526228DD7E60013A8DA /* SGGroundCell.swift in Sources */,
 				93059533228C6E7F00CB39E1 /* SGScreenFlow.swift in Sources */,
 				93059524228C6E7F00CB39E1 /* SGAuthorizationViewController.swift in Sources */,

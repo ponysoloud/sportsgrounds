@@ -33,7 +33,7 @@ class SGSpinningAnimationLayer: CAShapeLayer {
         self.setupStyle()
     }
 
-    private func setupStyle(strokeColor: UIColor = .cornflower, lineWidth: CGFloat = 2.0) {
+    private func setupStyle(strokeColor: UIColor = .black, lineWidth: CGFloat = 2.0) {
         self.fillColor = nil
         self.backgroundColor = nil
         self.strokeColor = strokeColor.cgColor

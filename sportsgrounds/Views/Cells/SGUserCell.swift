@@ -74,6 +74,11 @@ class SGUserCell: UITableViewCell {
     
     // MARK: - UICollectionView hierarchy
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.avatarImageView.image = UIImage(named: "user.avatar.placeholder")
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupSubviewsLayout()
@@ -104,7 +109,7 @@ class SGUserCell: UITableViewCell {
                    tapHandler: @escaping (SGUserCell) -> Void) {
         
         if let avatarUrl = user.imageUrl {
-            self.avatarImageView.load(url: avatarUrl, placeholder: #imageLiteral(resourceName: "user.avatar.placeholder"))
+            self.avatarImageView.load(url: avatarUrl, placeholder: nil)
         }
         
         self.hostImageView.isHidden = !isOwner
@@ -146,7 +151,7 @@ class SGUserCell: UITableViewCell {
             avatarImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: contentInsets.top),
             avatarImageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: contentInsets.left),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 28),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 35),
             
             nameLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: contentInsets.top),
             nameLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 16),

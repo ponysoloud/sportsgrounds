@@ -53,4 +53,8 @@ extension UIFont {
     class var descriptionTextFont: UIFont {
         return UIFont.systemFont(ofSize: 12, weight: .regular)
     }
+    
+    class var supersmallTextFont: UIFont {
+        return UIFont.systemFont(ofSize: 10, weight: .medium)
+    }
 }

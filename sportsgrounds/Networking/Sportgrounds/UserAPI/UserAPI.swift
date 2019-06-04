@@ -52,12 +52,12 @@ struct UserAPI: NetworkService {
     func editUser(withToken token: String, image: UIImage) -> Promise<SGUser> {
         return Promise { seal in
             
-            guard let imageData = image.jpegData(compressionQuality: 0.7) else {
+            guard let imageData = image.jpegData(compressionQuality: 0.5) else {
                 seal.reject(UserAPIError.imageIsNotConvertibleToJpegData)
                 return
             }
             
-            let request = UserRequest.editUser(token: token, data: imageData)
+            let request = UserRequest.editUser(token: token, imageName: "image.jpeg", imageData: imageData)
             provider.execute(request).done {
                 response in
                 switch response {

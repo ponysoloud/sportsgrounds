@@ -42,7 +42,7 @@ class SGUser: Decodable, Equatable, Parsable {
         rated = try container.decodeIfPresent(Bool.self, forKey: .rated) ?? false
         
         if let imageUrlString = try container.decodeIfPresent(String.self, forKey: .imageUrl) {
-            imageUrl = URL(string: SportsgroundsEnvironment().host + imageUrlString)
+            imageUrl = URL(string: imageUrlString)
         } else {
             imageUrl = nil
         }
