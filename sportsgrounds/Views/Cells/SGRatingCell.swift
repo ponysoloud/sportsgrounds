@@ -115,7 +115,13 @@ class SGRatingCell: UITableViewCell {
     
     func configure(withRating rating: Int, width: CGFloat) {
         if rating > 0 {
-            self.titleLabel.text = "Вас отметило \(rating) человек"
+            if rating == 1 {
+                self.titleLabel.text = "Вас отметил \(rating) человек"
+            } else if rating < 5 {
+                self.titleLabel.text = "Вас отметило \(rating) человека"
+            } else {
+                self.titleLabel.text = "Вас отметило \(rating) человек"
+            }
             self.subtitleLabel.text = "Отмечайте и вы других, чтобы все знали с кем можно приятно позаниматься"
         } else {
             self.titleLabel.text = "Вас пока еще не отметили"

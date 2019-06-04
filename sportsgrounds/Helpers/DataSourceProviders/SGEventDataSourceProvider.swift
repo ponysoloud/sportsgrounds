@@ -112,16 +112,23 @@ class SGEventDataSourceProvider {
         
         // Placeholder Section
         
-        if (event.status == .ended) {
-            let placeholderItem = SGDataSourceProviderRowItem.placeholder("Это событие уже прошло", #imageLiteral(resourceName: "event.icon.placeholder.passed"))
+        switch event.status {
+        case .scheduled:
+            break
+        case .processing:
+            let placeholderItem = SGDataSourceProviderRowItem.placeholder("Это событие проходит в текущий момент", #imageLiteral(resourceName: "event.icon.placeholder.process"))
             let placeholderSection = SGDataSourceProviderSection(headerItem: nil,
                                                                  rowItems: [placeholderItem])
             
             newDataSource.append(placeholderSection)
-        }
-        
-        if (event.status == .canceled) {
+        case .canceled:
             let placeholderItem = SGDataSourceProviderRowItem.placeholder("Это событие отменено", #imageLiteral(resourceName: "event.icon.placeholder.canceled"))
+            let placeholderSection = SGDataSourceProviderSection(headerItem: nil,
+                                                                 rowItems: [placeholderItem])
+            
+            newDataSource.append(placeholderSection)
+        case .ended:
+            let placeholderItem = SGDataSourceProviderRowItem.placeholder("Это событие уже прошло", #imageLiteral(resourceName: "event.icon.placeholder.passed"))
             let placeholderSection = SGDataSourceProviderSection(headerItem: nil,
                                                                  rowItems: [placeholderItem])
             

@@ -139,7 +139,7 @@ class SGGroundsViewController: SGFlowViewController {
         }
         
         marker.userData = groundLocation.id
-        marker.appearAnimation = .pop
+        marker.appearAnimation = .none
         marker.isFlat = true
         return marker
     }
@@ -186,15 +186,14 @@ extension SGGroundsViewController: GMSMapViewDelegate {
                 [unowned self]
                 locations in
                 
-                self.markers = Set(locations.map { self.marker(withGroundLocation: $0) })
                 self.mapView.clear()
+                self.markers = Set(locations.map { self.marker(withGroundLocation: $0) })
                 self.markers.forEach {
                     $0.map = self.mapView
                 }
             }.catch {
-//                [unowned self]
                 error in
-                print(error)
+                print("Error: \(error)")
             }
         }
     }

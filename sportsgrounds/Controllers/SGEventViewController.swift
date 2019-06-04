@@ -162,7 +162,7 @@ class SGEventViewController: SGViewController {
             case "User's age does't meet the requirements of the event":
                 SPAlert.present(message: "К сожалению вы не удовлетворяете условиям события")
             case "Team is full":
-                SPAlert.present(message: "Команда полная! Выберите другую")
+                SPAlert.present(message: "Команда заполнена! Выберите другую")
             default:
                 return SPAlert.present(message: "Неизвестная ошибка")
             }

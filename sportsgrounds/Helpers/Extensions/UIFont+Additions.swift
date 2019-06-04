@@ -14,10 +14,6 @@ extension UIFont {
         return UIFont.systemFont(ofSize: 24, weight: .bold)
     }
     
-    class var title2Font: UIFont {
-        return UIFont.systemFont(ofSize: 20, weight: .bold)
-    }
-    
     class var title3Font: UIFont {
         return UIFont.systemFont(ofSize: 20, weight: .semibold)
     }

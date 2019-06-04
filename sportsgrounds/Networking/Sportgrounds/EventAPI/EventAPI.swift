@@ -120,6 +120,41 @@ struct EventAPI: NetworkService {
         }
     }
     
+    func updateEvent(withToken token: String, eventId: Int, title: String?, description: String?) -> Promise<SGEvent> {
+        return Promise { seal in
+            let request = EventRequest.updateEvent(token: token,
+                                                   eventId: eventId,
+                                                   title: title,
+                                                   description: description,
+                                                   teamsCount: nil)
+            provider.execute(request).done {
+                response in
+                switch response {
+                case .data(_):
+                    let success: (SGEventResponse) -> Void = { s in
+                        seal.fulfill(s.event)
+                    }
+                    
+                    let failure: (SGBasicResponse) -> Void = { f in
+                        let error = SportsgroundsResponseError.serverFailureResponse(message: f.message)
+                        seal.reject(error)
+                    }
+                    
+                    do {
+                        try response.extractResult(success: success, failure: failure)
+                    } catch let error {
+                        seal.reject(error)
+                    }
+                case .error(let error):
+                    seal.reject(error)
+                }
+                }.catch {
+                    error in
+                    seal.reject(error)
+            }
+        }
+    }
+    
     func getEvent(withToken token: String, eventId: Int) -> Promise<SGEvent> {
         return Promise { seal in
             let request = EventRequest.getEvent(token: token, eventId: eventId)

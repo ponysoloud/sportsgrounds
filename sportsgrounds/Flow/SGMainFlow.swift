@@ -154,6 +154,28 @@ final class SGMainFlow: SGScreenFlow {
         return vc
     }
     
+    private var editEventScreen: SGEditEventViewController {
+        let vc = SGEditEventViewController(user: user)
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        let onContinue: () -> Void = {
+            [unowned vc] in
+            
+            guard let eventViewController = vc.navigationController?.viewControllers.last(where: {
+                $0 is SGEventViewController
+            }) else {
+                return
+            }
+            vc.navigationController?.popToViewController(eventViewController, animated: true)
+        }
+ 
+        vc.onContinue = onContinue
+        vc.processController = SGEditingEventProcess(title: nil, description: nil)
+        vc.eventAPI = EventAPI(provider: Provider(environment: SportsgroundsEnvironment(), dispatcher: HTTPDispatcher()))
+        vc.flow = self
+        return vc
+    }
+    
     private var eventScreen: SGEventViewController {
         let vc = SGEventViewController(user: user)
         vc.modalPresentationStyle = .overCurrentContext
@@ -208,6 +230,15 @@ final class SGMainFlow: SGScreenFlow {
             }
         }
         
+        let onEdit: (Int) -> Void = {
+            [unowned self, unowned vc] eventId in
+            
+            let target = self.editEventScreen
+            target.eventId = eventId
+            vc.navigationController?.pushViewController(target, animated: true)
+        }
+        
+        vc.onEdit = onEdit
         vc.onChat = onChat
         vc.onGround = onGround
         vc.onMap = onMap
