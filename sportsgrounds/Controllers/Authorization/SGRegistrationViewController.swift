@@ -1,6 +1,6 @@
 //
 //  SGRegistrationViewController.swift
-//  courses-aggregator
+//  sportsgrounds
 //
 //  Created by Alexander Ponomarev on 09/02/2019.
 //  Copyright © 2019 Alexander Ponomarev. All rights reserved.

@@ -1,9 +1,9 @@
 //
 //  UIFont+Additions.swift
-//  zam.wallet v 0.1
+//  sportgrounds
 //
-//  Generated on Zeplin. (8/9/2018).
-//  Copyright (c) 2018 __MyCompanyName__. All rights reserved.
+//  Created by Alexander Ponomarev on 14/05/2019.
+//  Copyright © 2019 Alexander Ponomarev. All rights reserved.
 //
 
 import UIKit

@@ -1,6 +1,0 @@
-framework module GoogleStaticMapsKit {
-  umbrella header "GoogleStaticMapsKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

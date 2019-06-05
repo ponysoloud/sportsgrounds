@@ -1,9 +1,9 @@
 //
 //  SportsgroundsResponseError.swift
-//  wallet
+//  sportgrounds
 //
-//  Created by  me on 25/07/2018.
-//  Copyright © 2018 zamzam. All rights reserved.
+//  Created by Alexander Ponomarev on 14/05/2019.
+//  Copyright © 2019 Alexander Ponomarev. All rights reserved.
 //
 
 import Foundation
