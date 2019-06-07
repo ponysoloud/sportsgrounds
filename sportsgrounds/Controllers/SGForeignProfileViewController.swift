@@ -332,9 +332,9 @@ extension SGForeignProfileViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // when reaching bottom, load a new page
-        if scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.bounds.size.height {
+        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.size.height, scrollView.contentOffset.y > 0 {
             
-            if paginator.reachedLastPage {
+            if !paginator.reachedLastPage {
                 self.paginator.fetchNextPage()
             }
         }

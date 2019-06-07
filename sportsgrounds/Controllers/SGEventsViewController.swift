@@ -196,8 +196,9 @@ extension SGEventsViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // when reaching bottom, load a new page
-        if scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.bounds.size.height {
-            if self.paginator.reachedLastPage {
+        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.size.height, scrollView.contentOffset.y > 0 {
+            
+            if !self.paginator.reachedLastPage {
                 self.paginator.fetchNextPage()
             }
         }

@@ -206,7 +206,7 @@ final class SGMainFlow: SGScreenFlow {
         let onMap: (SGCoordinate) -> Void = {
             [unowned self, unowned vc] coordinates in
             
-            let tabBarController = self.navigationController.viewControllers.first as? UITabBarController
+            let tabBarController = self.navigationController.viewControllers.first(where: { $0 is UITabBarController }) as? UITabBarController
             tabBarController?.selectedIndex = 0
             vc.dismiss(animated: true, completion: {
                 if let groundsNavigationController = tabBarController?.viewControllers?.first as? UINavigationController,
